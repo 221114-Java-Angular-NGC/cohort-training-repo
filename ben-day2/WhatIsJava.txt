@@ -1,0 +1,21 @@
+What is Java?
+	A translator, making computer program
+	Multi platform, works on any platform, it's the same everywhere. 
+	Object Oriented. 
+
+	Is a general purpose, object oriented programming language. 
+	Java is a compiled, strongly typed language. 
+	Java has WORA (Write Once, Run Anywhere) 
+
+
+What are the features of Java?
+	Java is simple 
+		Java is based on C, if you're familiar with another C based language (e.g. C, C++, etc. )
+		
+	Java is OOP: 
+		Fully OOP, with all the features and advantages that come with it. 
+
+	Java is robust: 
+		Java has the garbage collector, which simplifies memory management. 
+
+	Java is platform independent. 
