@@ -66,6 +66,8 @@ public class GradingCalculatorImplTest {
 		
 		assertEquals(0.0, gradCalculator.percentageOfCorrectAnswers(0, 0));
 		
+		
+		
 	}
 	
 	@Test
@@ -83,6 +85,8 @@ public class GradingCalculatorImplTest {
 		assertEquals("Not a grade", gradCalculator.gradeAchieved(-15));
 		
 		assertNotEquals("A+", gradCalculator.gradeAchieved(89.99));
+		
+
 		
 		
 	}

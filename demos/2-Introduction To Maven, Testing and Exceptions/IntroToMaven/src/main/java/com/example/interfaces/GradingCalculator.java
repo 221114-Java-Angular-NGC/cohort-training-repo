@@ -1,5 +1,7 @@
 package com.example.interfaces;
 
+import com.example.exceptions.InvalidPercentageException;
+
 public interface GradingCalculator {
 	
 	double pi = 3.14;
@@ -9,6 +11,6 @@ public interface GradingCalculator {
 	double percentageOfCorrectAnswers(int correctAnswers, int incorrectAnswers);
 	
 	//Returning the grade. 
-	String gradeAchieved(double percentageScore);
+	String gradeAchieved(double percentageScore) throws InvalidPercentageException;
 
 }
