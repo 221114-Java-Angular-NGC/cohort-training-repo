@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.revature</groupId>
+  <artifactId>IntroToMaven</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <!-- This is a comment in HTML (Hyper Text Markup Language) 
+  	and XML (eXtensible Markup Language) -->
+  	
+  <!-- 
+  		Maven is a dependency manager, it allows us to integrate external libraries and packeges 
+  		into our applicaiton. 
+  		
+  		What is a dependency?
+  			An external stand alone set of libraries/tools/programs that we utilise withing our 
+  			projtect. 
+  			
+  		How do configure Maven projects?
+  			We use the pom.xml - Project Object Model. 
+  			Formatted in xml, and will contain all the configuration details for the project. 
+  			Using the pom.xml, we can provide a few lines of code to add dependencies to our project.
+  			
+  		Maven has a Centralized repository, containing all the dependencies that we can use. 
+   -->
+  
+  
+  <properties>
+  	<maven.compiler.source>1.8</maven.compiler.source>
+  	<maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
+  <dependencies>
+  <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+	<dependency>
+	    <groupId>org.junit.jupiter</groupId>
+	    <artifactId>junit-jupiter-api</artifactId>
+	    <version>5.9.0</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+	<dependency>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-classic</artifactId>
+	    <version>1.4.1</version>
+	    <scope>test</scope>
+	</dependency>
+	
+  
+  	
+  </dependencies>
+  
+  
+</project>
+
