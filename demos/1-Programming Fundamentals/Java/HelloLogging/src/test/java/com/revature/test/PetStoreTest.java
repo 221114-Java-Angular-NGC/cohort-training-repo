@@ -32,7 +32,14 @@ class PetStoreTest {
 	@Test
 	void addHobbyToPet() {
 		//hint: use PetStoreImpl's addHobby() method here to perform this test.
+		//create a new instance of a PetStoreImpl object
+		PetStoreImpl ps = new PetStoreImpl();
 		
+		//passing the string "fetch" into method called addHobby that returns the stored hobby
+		String result = ps.addHobby("fetch");
+		
+		//test to make sure the hobby is fetch (compare expected with actual results)
+		assertEquals("fetch", result);
 	}
 
 }
