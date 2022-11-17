@@ -69,14 +69,14 @@ Logback is a logging library that is used to record and print messages either to
 	
 	<!--  below we are defining the root log level of our project-->
 	<!-- and also setting the appender to be "STDOUT which implies it will be the console -->
-	<root level = "FATAL">
+	<root level = "DEBUG">
 	
 		<appender-ref ref="STDOUT"/>
 	</root>
 
 <!-- Here finally we are setting the logger  -->
 
-<logger name="com.revature" level="ERROR" additivity="false">
+<logger name="com.revature" level="DEBUG" additivity="false">
 	 <appender-ref ref="STDOUT"/> 
 	<appender-ref ref="RfAppender"/>
 
