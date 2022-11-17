@@ -11,6 +11,8 @@ public class MainDriver {
 		PetStoreImpl petStore = new PetStoreImpl();
 		
 		petStore.addNewPet(new Pet("Fido", 3, "Hound Dog", new ArrayList<String>()));
+		
+		petStore.addHobby("fetch");
 
 	}
 
