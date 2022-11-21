@@ -5,21 +5,21 @@ public class Saiyan {
 	
 	private int id;
 	private String name;
-	private long powerLevel;
+	private int powerLevel;
 	
 	public Saiyan() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Saiyan(int id, String name, long powerLevel) {
+	public Saiyan(int id, String name, int powerLevel) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.powerLevel = powerLevel;
 	}
 
-	public Saiyan(String name, long powerLevel) {
+	public Saiyan(String name, int powerLevel) {
 		super();
 		this.name = name;
 		this.powerLevel = powerLevel;
@@ -41,11 +41,11 @@ public class Saiyan {
 		this.name = name;
 	}
 
-	public long getPowerLevel() {
+	public int getPowerLevel() {
 		return powerLevel;
 	}
 
-	public void setPowerLevel(long powerLevel) {
+	public void setPowerLevel(int powerLevel) {
 		this.powerLevel = powerLevel;
 	}
 
