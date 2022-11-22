@@ -3,6 +3,8 @@ package com.revature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.revature.controllers.UserController;
+
 import io.javalin.Javalin;
 
 public class MainApp {
@@ -29,6 +31,9 @@ public class MainApp {
 			logger.info("Testing app....");
 			ctx.html("Welcome to our website");
 		});
+		
+		//POST METHODS
+		app.post("/users/register", UserController.register);
 	}
 
 }
