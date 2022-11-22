@@ -27,10 +27,13 @@ public class MainApp {
 			logger.info("Request at URL " + ctx.url() + " is now complete.");
 		});
 		
+		//GET METHODS
 		app.get("/test", ctx -> {
 			logger.info("Testing app....");
 			ctx.html("Welcome to our website");
 		});
+		
+		app.get("/users/{id}", UserController.getUserById);
 		
 		//POST METHODS
 		app.post("/users/register", UserController.register);

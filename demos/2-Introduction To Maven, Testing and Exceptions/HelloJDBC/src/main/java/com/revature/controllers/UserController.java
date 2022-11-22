@@ -46,4 +46,18 @@ public class UserController {
 			ctx.status(HttpStatus.NO_CONTENT);
 		}
 	};
+	
+	public static Handler getUserById = ctx -> {
+		//to retrieve info from the url, we can use our ContextHandler from Javalin
+		int id = Integer.parseInt(ctx.pathParam("id"));
+		
+		User target = uServ.getUserById(id);
+		
+		if(target != null && target.getUsername() != null) {
+			ctx.json(target);
+		}else {
+			ctx.html("Error during user search by that id. Try again.");
+			ctx.status(HttpStatus.NOT_FOUND);
+		}
+	};
 }
