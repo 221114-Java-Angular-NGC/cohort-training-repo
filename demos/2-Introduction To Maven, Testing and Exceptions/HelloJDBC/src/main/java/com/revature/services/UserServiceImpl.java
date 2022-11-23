@@ -14,8 +14,13 @@ public class UserServiceImpl implements UserService {
 	//since this class depends on the DAO implementation class, we will need an instance of DAO here
 	private static UserDAO userDAO;
 	
+	
 	public UserServiceImpl() {
 		userDAO = new UserDAOImpl();
+	}
+	
+	public UserServiceImpl(UserDAOImpl ud) {
+		this.userDAO = ud;
 	}
 
 	@Override
