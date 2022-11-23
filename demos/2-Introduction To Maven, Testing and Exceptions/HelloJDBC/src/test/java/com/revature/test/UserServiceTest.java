@@ -9,6 +9,7 @@ import java.time.LocalDate;
 
 import org.junit.Before;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -55,6 +56,7 @@ class UserServiceTest {
 	}
 
 	@Test
+	@DisplayName("1. Get User by ID - Normal Test") //this annotation will allow you to give your test case a custom, readable name in the TestRunner
 	void testGetUserById() {
 		//here we need to tell Mockito what it should do if given a specific situation in the program
 		//arrange
@@ -70,5 +72,24 @@ class UserServiceTest {
 		//verifying that the dao method was used once in the execution of the service call
 		verify(userDAO, times(1)).getById(1);
 	}
+	
+	@Test
+	@DisplayName("2. Get User by ID - No User ID")
+	void testNoUserFoundById() {
+		//here we need to tell Mockito what it should do if given a specific situation in the program
+		//arrange
+		when(userDAO.getById(0)).thenReturn(null);
+		
+		//act (do the service call)
+		User result = uServ.getUserById(0);
+		
+		//assert & verify that the service method was used once
+		//checking if the getById returns a User object that matches temp user
+		assertEquals(null, result);
+		
+		//verifying that the dao method was used once in the execution of the service call
+		verify(userDAO, times(1)).getById(0);
+	}
 
+	
 }
