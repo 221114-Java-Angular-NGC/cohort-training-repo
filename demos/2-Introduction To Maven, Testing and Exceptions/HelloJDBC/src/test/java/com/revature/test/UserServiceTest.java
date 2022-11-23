@@ -7,15 +7,11 @@ import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
 
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
-import com.revature.dao.UserDAO;
 import com.revature.dao.UserDAOImpl;
 import com.revature.models.User;
 import com.revature.services.UserService;
