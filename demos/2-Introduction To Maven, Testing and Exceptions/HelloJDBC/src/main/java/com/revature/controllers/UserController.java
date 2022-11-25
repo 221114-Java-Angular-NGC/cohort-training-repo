@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.revature.models.LoginTemplate;
 import com.revature.models.User;
 import com.revature.services.UserService;
 import com.revature.services.UserServiceImpl;
@@ -47,6 +48,27 @@ public class UserController {
 		}
 	};
 	
+	public static Handler login = ctx -> {
+		//1. get user info from request body
+		String body = ctx.body();
+		
+		//here we will need to convert the body into a User object
+		ObjectMapper om = new ObjectMapper();
+		LoginTemplate target = om.readValue(body, LoginTemplate.class);
+		
+		//2. do service call
+		boolean isAuthenicated = uServ.login(target.getUsername(), target.getPassword());
+		
+		//3. render response
+		if(isAuthenicated == true) {
+			ctx.html("Successful login. Welcome " + target.getUsername() + "!");
+			ctx.status(HttpStatus.OK);
+		}else {
+			ctx.html("Invalid username and/or password. Please try again.");
+			ctx.status(HttpStatus.UNAUTHORIZED);
+		}
+	};
+	
 	public static Handler getUserById = ctx -> {
 		//to retrieve info from the url, we can use our ContextHandler from Javalin
 		int id = Integer.parseInt(ctx.pathParam("id"));
@@ -59,5 +81,49 @@ public class UserController {
 			ctx.html("Error during user search by that id. Try again.");
 			ctx.status(HttpStatus.NOT_FOUND);
 		}
+	};
+	
+	public static Handler update = ctx -> {
+		//1. get user info from request body
+		int id = Integer.parseInt(ctx.pathParam("id"));
+		String body = ctx.body();
+		
+		//here we will need to convert the body into a User object
+		ObjectMapper om = new ObjectMapper();
+		om.registerModule(new JavaTimeModule());
+		User target = om.readValue(body, User.class);
+		target.setId(id);
+		
+		//2. do service call
+		boolean isUpdated = uServ.updateUser(target);
+		
+		//3. render response
+		if(isUpdated == true) {
+			ctx.html("User ID# "+ id +" : Your user information has been updated successfully.");
+			ctx.status(HttpStatus.OK);
+		}else {
+			ctx.html("Error during update. Try again.");
+			ctx.status(HttpStatus.BAD_REQUEST);
+		}
+	};
+	
+	public static Handler delete = ctx -> {
+		
+		//1. get user id from path
+		int id = Integer.parseInt(ctx.pathParam("id"));
+		
+		//2. do service call
+		boolean isDeleted = uServ.deleteUser(id);
+		
+		//3. render response
+		
+		if(isDeleted == true) {
+			ctx.html("User ID# "+ id +" has been removed from the system successfully.");
+			ctx.status(HttpStatus.OK);
+		}else {
+			ctx.html("Error during deletion. Try again.");
+			ctx.status(HttpStatus.BAD_REQUEST);
+		}
+		
 	};
 }

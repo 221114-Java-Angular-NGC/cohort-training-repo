@@ -39,25 +39,34 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean login(String username, String password) {
-		// TODO Auto-generated method stub
+		//1. find user that matches username given
+		User target = userDAO.getByUsername(username);
+		
+		//2. check if password/username matches records
+		//true = user found, login ok
+		if(target.getUsername().equalsIgnoreCase(username) && target.getPassword().equalsIgnoreCase(password)) {
+			return true;
+		}
+		//false = no user found, error in login
 		return false;
 	}
 
 	@Override
 	public User getUserById(int id) {
+		logger.info("UserService::getUserById() called. Trying to find user ID# "+ id +"...");
 		return userDAO.getById(id);
 	}
 
 	@Override
 	public boolean updateUser(User user) {
-		// TODO Auto-generated method stub
-		return false;
+		logger.info("UserService::updateUser() called. Updating user ID# "+ user.getId() +"...");
+		return userDAO.update(user);
 	}
 
 	@Override
 	public boolean deleteUser(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		logger.info("UserService::deleteUser() called. Deleting user ID# "+ id +"...");
+		return userDAO.deleteById(id);
 	}
 
 }

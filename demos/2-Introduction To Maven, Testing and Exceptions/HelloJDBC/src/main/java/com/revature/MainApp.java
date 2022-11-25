@@ -29,14 +29,22 @@ public class MainApp {
 		
 		//GET METHODS
 		app.get("/test", ctx -> {
-			logger.info("Testing app....");
-			ctx.html("Welcome to our website");
+			//add log message and render test message to browser
+			logger.info("Starting HelloJDBC application...");
+			ctx.html("Welcome to the HelloJDBC application!");
 		});
 		
 		app.get("/users/{id}", UserController.getUserById);
 		
 		//POST METHODS
 		app.post("/users/register", UserController.register);
+		app.post("/users/login", UserController.login);
+		
+		//PUT METHODS
+		app.put("/users/{id}", UserController.update);
+		
+		//DELETE METHODS
+		app.delete("/users/{id}", UserController.delete);
 	}
 
 }
