@@ -12,6 +12,7 @@ import com.revature.services.UserServiceImpl;
 
 import io.javalin.http.Handler;
 import io.javalin.http.HttpStatus;
+import jakarta.servlet.http.Cookie;
 
 public class UserController {
 
@@ -62,6 +63,11 @@ public class UserController {
 		//3. render response
 		if(isAuthenicated == true) {
 			ctx.html("Successful login. Welcome " + target.getUsername() + "!");
+			
+			//authorize user
+			ctx.cookieStore().set("Auth-Cookie", target.getUsername() + "-56797-woof");
+			Cookie auth = new Cookie("Auth-Cookie", target.getUsername() + "woof9000bark");
+			ctx.res().addCookie(auth);
 			ctx.status(HttpStatus.OK);
 		}else {
 			ctx.html("Invalid username and/or password. Please try again.");
