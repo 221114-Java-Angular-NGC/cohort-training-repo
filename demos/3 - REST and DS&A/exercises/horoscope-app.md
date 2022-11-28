@@ -1,14 +1,15 @@
 # Horoscope API App
 ## MVP
 This RESTful application will allow end users to do the following:
-    - register for an user account that must include their zodiac sign based on the birthdate
-    - log in with existing user credentials of a username and password
-    - show current user information
-    - get today's horoscope for current user
-        - Constraint: User must have Authentication-Cookie as part of HTTP request header
-    - update current user information
-    - delete user
-        - Constraint: This feature should only be allowed for admin-authorization-level users (hint: you will first need to login to get your auth-cookie and then pass that cookie in the header of your HTTP request)
+ - register for an user account that must include their zodiac sign based on the birthdate
+ - log in with existing user credentials of a username and password
+ - show current user information
+ - get today's horoscope for current user
+   - Constraint: User must have Authentication-Cookie as part of HTTP request header
+ - update current user information
+ - delete user
+        
+ - Constraint: This feature should only be allowed for admin-authorization-level users (hint: you will first need to login to get your auth-cookie and then pass that cookie in the header of your HTTP request)
     
 This application also has the following quality requirements:
 1. Your application must show at least 70% test coverage overall. You may need to incorporate a Maven dependency like JaCoCo into your project to verify this requirement in a generated report.
