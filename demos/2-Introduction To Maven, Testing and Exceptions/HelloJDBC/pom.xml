@@ -1,17 +1,25 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.revature</groupId>
-  <artifactId>HelloJDBC</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>HelloJDBC</name>
-  
-  <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.revature</groupId>
+	<artifactId>HelloJDBC</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>HelloJDBC</name>
+
+	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
-	
+
 	<dependencies>
-	<!-- https://mvnrepository.com/artifact/io.javalin/javalin -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.10</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.javalin/javalin -->
 		<dependency>
 			<groupId>io.javalin</groupId>
 			<artifactId>javalin</artifactId>
@@ -34,8 +42,9 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.13.4</version>
 		</dependency>
-		
-		<!--  These dependencies are for JSON Web Token - this will be used later for authenication of our users with JWTs-->
+
+		<!-- These dependencies are for JSON Web Token - this will be used later 
+			for authenication of our users with JWTs -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
@@ -53,36 +62,37 @@
 			<version>0.11.5</version>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<!-- PostgreSQL driver -->
-		
-		<!-- this is needed for JDBC to know which SQL dialect our queries will be written --> 
+
+		<!-- this is needed for JDBC to know which SQL dialect our queries will 
+			be written -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>42.4.0</version>
 		</dependency>
-		
+
 		<dependency>
-		  <groupId>com.fasterxml.jackson.datatype</groupId>
-		  <artifactId>jackson-datatype-jsr310</artifactId>
-		  <version>2.13.4</version>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>2.13.4</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
 		<dependency>
-		    <groupId>org.mockito</groupId>
-		    <artifactId>mockito-core</artifactId>
-		    <version>4.8.0</version>
-		    <scope>test</scope>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>4.8.0</version>
+			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.9</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 	</dependencies>
 </project>
