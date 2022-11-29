@@ -61,13 +61,16 @@ public class UserController {
 		boolean isAuthenicated = uServ.login(target.getUsername(), target.getPassword());
 		
 		//3. render response
+		//checking to see if the user does exist in the system
 		if(isAuthenicated == true) {
+			//if true - creating a HTTP cookie for our logged in user and sending that cookie in the HTTP response
 			ctx.html("Successful login. Welcome " + target.getUsername() + "!");
 			
 			//authorize user
+			//using Javalin's CookieSet to save our session cookie for later authorization for admin-level methods (ex. only allow deletions if user is manager)
 			ctx.cookieStore().set("Auth-Cookie", target.getUsername() + "-56797-woof");
 			Cookie auth = new Cookie("Auth-Cookie", target.getUsername() + "woof9000bark");
-			ctx.res().addCookie(auth);
+			ctx.res().addCookie(auth); //adds the HTTP cookie to the response header
 			ctx.status(HttpStatus.OK);
 		}else {
 			ctx.html("Invalid username and/or password. Please try again.");
@@ -119,16 +122,34 @@ public class UserController {
 		int id = Integer.parseInt(ctx.pathParam("id"));
 		
 		//2. do service call
-		boolean isDeleted = uServ.deleteUser(id);
+		//a. get our HTTP cookie from the request header
+		String ticket = ctx.req().getHeader("Auth-Cookie").replaceAll("woof9000bark", "");
+		logger.info("Authentication cookie: " + ticket);
+		
+		//b. get the logged in user info
+		User target = uServ.getUserByUsername(ticket);
+		logger.info("Based on cookie, this is your logged in user: " + target);
 		
 		//3. render response
-		
-		if(isDeleted == true) {
-			ctx.html("User ID# "+ id +" has been removed from the system successfully.");
-			ctx.status(HttpStatus.OK);
-		}else {
-			ctx.html("Error during deletion. Try again.");
-			ctx.status(HttpStatus.BAD_REQUEST);
+		//if current user matches this given admin username, then do the deletion
+		try {
+			
+			if(target.getUsername().equalsIgnoreCase("aaknox")) {
+				boolean isDeleted = uServ.deleteUser(id);
+				
+				if(isDeleted == true) {
+					ctx.html("User ID# "+ id +" has been removed from the system successfully.");
+					ctx.status(HttpStatus.OK);
+				}else {
+					ctx.html("Error during deletion. Try again.");
+					ctx.status(HttpStatus.BAD_REQUEST);
+				}
+			}
+		}catch (NullPointerException e){
+			//this is how you can handle your custom exceptions gracefully
+			//if not me, then send a NotAuthorized status code back in the Http response
+			ctx.html("Sorry, this user is not authorized to perform this operation. Error: " + e.getMessage());
+			ctx.status(HttpStatus.UNAUTHORIZED);
 		}
 		
 	};

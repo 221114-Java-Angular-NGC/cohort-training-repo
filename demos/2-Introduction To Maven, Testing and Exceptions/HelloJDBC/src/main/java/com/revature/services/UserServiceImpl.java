@@ -69,4 +69,10 @@ public class UserServiceImpl implements UserService {
 		return userDAO.deleteById(id);
 	}
 
+	@Override
+	public User getUserByUsername(String ticket) {
+		logger.info("UserService::getUserByUsername() called. Trying to find username "+ ticket +"...");
+		return userDAO.getByUsername(ticket);
+	}
+
 }
