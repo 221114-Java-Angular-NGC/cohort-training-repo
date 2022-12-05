@@ -1,0 +1,71 @@
+
+
+
+/*
+This is still a comment in CSS
+*/
+
+/*
+    CSS structure: 
+
+        selector {
+            property-1:value-1;
+            property-2:value-2;
+        }
+
+    Types of selectors: 
+
+    > We can select by tag name
+    > We can select by class name ".myClass"
+        Classes are a way of grouping together multiple elements in HTML
+    > We can select by id "#myId"
+        Id is unique to a single element in HTML 
+*/
+
+p {
+    background-color: black;
+    color: blueviolet;
+}
+
+
+
+.special-class {
+    color: orange;
+}
+
+/* h1.special-class {
+    color: orange;
+}
+
+div > .special-class {
+    color: orange;
+} */
+
+
+/* CSS Box Model
+    Is used by the web page to render our elements. Each element is on the page as a "box"
+    The "box" gives us flexbilitiy in adjusting spacing from other elements and styling
+
+    Starting from the outermost box to in the inner most: 
+    Margin, Border, Padding, Content
+
+
+
+*/
+#title-id {
+    background-color: green;
+   
+    border: 10px solid black;
+
+    padding: 10cm;
+}
+
+#paragraph-within-div {
+    color:black;
+}
+
+#span-element{
+    background-color: green;
+    padding: 0.2cm;
+    margin: 1cm;
+}

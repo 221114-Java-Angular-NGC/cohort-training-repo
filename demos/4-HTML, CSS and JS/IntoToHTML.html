@@ -25,9 +25,10 @@
             
             <!-- Styling, Javascript, even more stuff -->
 
+            
             <style>
                 /* This is a comment in CSS - I'm now following CSS rules */
-
+                /* Internal style sheet */ 
                 /* I want to make all paragraph tags be Red */
                 /* We use a selector to "select" the p tags and then provide key value pairs for its properties*/
             
@@ -35,7 +36,7 @@
                 {
                     color: rgb(11, 42, 219);
                 }
-                div{
+                div {
                     color: green;
                 }
 
@@ -44,41 +45,45 @@
                 }
 
             </style>
+           
+
+        <link rel="stylesheet" href="MyStyle.css">
+        <link rel="stylesheet" href="MyStyle2.css">
 
         </head>
 
         <body> <!-- Contains all the information that will be rendered on the webpage.-->
 
             <div>
-            <h1> This is a headline Tag</h1> <!-- Used for titles or subtitles. -->
+            <h1 class="special-class" id="title-id"> This is a headline Tag</h1> <!-- Used for titles or subtitles. -->
 
             <br> <!-- Self closing tag, that creates a line of space-->
             <br>
-            <br><!-- It's not a good idea, because this is not adaptable to different scree sizes.-->
-            <h6> This is also a headline tag, just much smaller!</h6>
+            <br>It's not a good idea, because this is not adaptable to different scree sizes.
+            <h6 > This is also a headline tag, just much smaller!</h6>
             </div>
 
             <div style="background-color: aqua; color: blueviolet; text-align: right;">
 
                 <!-- Inline Styling, we can define the style of an elelment at the tag level-->
-                <p style="color: crimson;">This is a paragraph tag</p> 
+                <p id="paragraph-within-div" class="special-class" style="color: crimson;">This is a paragraph tag</p> 
                 <p style="text-align: center;">This is a paragraph tag</p> 
                 <p style="text-align: left;">This is a paragraph tag</p> 
             </div>
             
             
-                <p>This is a paragraph tag</p> 
-                <p>This is a paragraph tag</p> 
+                <p class="special-class">This is a paragraph tag</p> 
+                <p class="special-class">This is a paragraph tag</p> 
                 <p>This is a paragraph tag</p>
 
-            <div> <!-- This create a block space!-->
+            <div class="special-class"> <!-- This create a block space!-->
                 <p>This is a paragraph tag</p> 
                 <p>This is a paragraph tag</p> 
                 <p>This is a paragraph tag</p> 
             </div>
 
             <!--span tag acts as an inline collection of text-->
-            <p>This is another paragraph, <span style="color: blue; font-size: 3rem;">with a span tag inside of it!</span></p>
+            <p>This is another paragraph, <span id="span-element">with a span tag inside of it!</span></p>
 
 
 
@@ -102,7 +107,7 @@
             <!-- List-->
         <div>
             <ol> <!-- Ordered Lists-->
-                <li>Item 1</li>
+                <li class="special-class">Item 1</li>
                 <li>Item 2</li>
                 <li>Item 3</li>
                 <li> <ol>
