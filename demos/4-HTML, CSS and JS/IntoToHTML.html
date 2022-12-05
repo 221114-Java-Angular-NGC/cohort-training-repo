@@ -1,0 +1,151 @@
+<!--
+    In HTML, this is a comment (similar to XML)
+
+    HTML - Hyper Text Markup Language 
+
+    HTML is similar to XML in that it follows similar syntax. 
+    XML is used to store configuration detail 
+    HTML is used to display documents and webpages on the browser. 
+
+    XML we can create new elements and attributes for our namespaces.
+    HTML is static, all the elements are already predefined. 
+
+    Like XML, HTML is very hierarchal. Typically, every element is enclosed in another element. 
+
+-->
+
+<!DOCTYPE html> <!-- This is an optional psuedo tag that tells the browser that this is a htlm file-->
+
+<html> <!-- This is a root tag for HTML files-->
+        
+        <head> <!-- Contain the metadata for the webpage-->
+            
+            <meta charset="UTF-8"> <!-- Character Set-->
+            <title>Hello HTML</title> <!-- Browser tab label-->
+            
+            <!-- Styling, Javascript, even more stuff -->
+
+            <style>
+                /* This is a comment in CSS - I'm now following CSS rules */
+
+                /* I want to make all paragraph tags be Red */
+                /* We use a selector to "select" the p tags and then provide key value pairs for its properties*/
+            
+                p
+                {
+                    color: rgb(11, 42, 219);
+                }
+                div{
+                    color: green;
+                }
+
+                div > p {
+                    font-size: 3rem;
+                }
+
+            </style>
+
+        </head>
+
+        <body> <!-- Contains all the information that will be rendered on the webpage.-->
+
+            <div>
+            <h1> This is a headline Tag</h1> <!-- Used for titles or subtitles. -->
+
+            <br> <!-- Self closing tag, that creates a line of space-->
+            <br>
+            <br><!-- It's not a good idea, because this is not adaptable to different scree sizes.-->
+            <h6> This is also a headline tag, just much smaller!</h6>
+            </div>
+
+            <div style="background-color: aqua; color: blueviolet; text-align: right;">
+
+                <!-- Inline Styling, we can define the style of an elelment at the tag level-->
+                <p style="color: crimson;">This is a paragraph tag</p> 
+                <p style="text-align: center;">This is a paragraph tag</p> 
+                <p style="text-align: left;">This is a paragraph tag</p> 
+            </div>
+            
+            
+                <p>This is a paragraph tag</p> 
+                <p>This is a paragraph tag</p> 
+                <p>This is a paragraph tag</p>
+
+            <div> <!-- This create a block space!-->
+                <p>This is a paragraph tag</p> 
+                <p>This is a paragraph tag</p> 
+                <p>This is a paragraph tag</p> 
+            </div>
+
+            <!--span tag acts as an inline collection of text-->
+            <p>This is another paragraph, <span style="color: blue; font-size: 3rem;">with a span tag inside of it!</span></p>
+
+
+
+            <!-- Images -->
+            <!--Some elements can exist stand alone, but typically we want to provide 
+                attributes to elements. These attributes can be used as labels or provide 
+                additional information to the lement-->
+            <!-- Our Img tag requires attributes, in this case src.-->
+            <img src="https://images.newscientist.com/wp-content/uploads/2021/06/03141753/03-june_puppies.jpg"
+                alt = "A really cute image is meant to be here"
+                height = "400" >
+
+            <!-- Can also be used for videos-->
+            <iframe src = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUTExMWFhUVFRgWGBcVGRcYFxcXFRcXFxYXFRoaHSggGB0lGxUXITEhKCktLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGzIlHyUtLS0tLy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAbAAEAAwEBAQEAAAAAAAAAAAAAAwQFBgIBB//EADsQAAIBAgMGAgkCBQMFAAAAAAABAgMRBCExBRJBUWGRcYEGEyIyobHB0fBS4RQVQnLxBzNiI0NTY4L/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAgEDBAX/xAAoEQEBAAEDBAIBAwUAAAAAAAAAAQIDERIhMUFRBBORIlLhQmGBsfD/2gAMAwEAAhEDEQA/APw0AAAAAAAAAAAAAAAAAko0XJ5ICM1NhbBr4ye5QhvPsu5LhNlLjn8jrPRzFTw1SM4O1npw8GddHhy/X2Rny4/p7sWXoco3Uq6lJaqlFySf9zaT8rk2E9FaTebqPPi4xXnkzstzD1ZbyToyedo5wv0TzS6XZdwlJQle1OovNfOx9XDT0fGM/wBuG+W3W3f8fwx9k+g2DlCU5q+41eMqjTlnnuJa5eBepehuB3JOpht1XylGdXeedmlduLtrw4+B0VPaEF72HSUnvWT9l2dsuR7r1ozUpxjTir+7JrR9L3avxsdZw/bJ+Hlyx1LfP5/lwe2v9OaG7v4atJ3zSlnFp6K+Vpa5PkcTjfRytTbWTadraM/ZY4iMYz0bmrO2UYq9/N5eVzF2hR9bO6W9J2VktbKx5tfR08pvO/8A3h6tHnj0yu8/u/IK2HlD3oteJEfpO0sDG27k7a8rvgc1jdhLWOT+B8vUkxuz0yubBYxWEnTftLz4FcloAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGps7Z97OS8gIMHgHLN6fM38LgkloWsNgzTpYaxzuSpFOjhWXqVC3AsUqNizTpflvoRclcUFOmy1BSX4yWmrcH4ksc893v/AINmplO1OKJVWuLcvK3meo15M9KKJGlr+3mV9+ftnFDK/wCdfMjhVqRd4OztbLLJ3TWXRl3dTSerPk4fn7mfbl7ZxZNSi3qQTwxtuk7EToE8qbObxWATvlc5jamw3G8oacvsfolbDXKVfCZaFS+mbPy1o+HVbc2He8oK0uXP9zlpK2TLxy3Y+AAoAAAAAAAAAAAAAAAAAAAAAAAnwlDfkl3At7Lwe895rLgdTg8OsitgKKRs4aMepFrYsUKaL9KCyPOHjFr9i7h6EVx/PE510kfIQX4ixTXQgkoQd51PBF6EYaqzvx4HO7rkfVK/ARpJ8b34/wCD3DCPWL+vZH2eCle6qWStlkvgnbMnet2hGhFcvPM9xpxXCL+B6jSvr9yf1LsrLu0bvWbRV9XHmr+R5nC+WVvI94mjOOeX07oq1Kjt7sb56E8q3jEzh4HiUV0IsJKTtHRcbq/bmeq9K6ed7Pl2s+OWZUuSbI8ziVatNMl3XfXz5+GRHUi+f5wN3qbIzMThkzjPSbY+tSCzXvLmuZ+heqXiZ2NoX/pKmW3VFfkwNLbuA9TUaXuyzX2M09Eu83SAA0AAAAAAAAAAAAAAAAAAAOg2JhMr2zZh4eF5JdTstlwWRg08Hh+hr4fD9GQYRJGvh4mcJfKplXmnQ6MtU8P0ZNCpFXu1l8y1h60Xoybp4+1zK+leGH6Psj3HBRvfd+CL06sYRTl+eBPRxEHZ3XexF0sPNVM8vSjDCrk/JI9wwfR9japqOt/Mnp2aya+P3H04+2fZfTDWDv8A0y8bHv8Ahv8AjLsdFTcHxT4Xb/fIVdyOc5JLK1sr97tmzRx9supfTn5YK+sJdkfHgf8AhLsdRGMHa0ld558vAKhHTev9/qV9GN8s+yzw5T+Xr9Ej5LAv9M7ZceWnY6qtRgld5Li8lcy3i6Tdt7Prl8TLoaePen2ZXwxJ4J8pdyCphXyfc6D1sHpbvqU8RVguKVuC+vM36NP9ybqZemBVwn/EpV8I+XxN+piIWbv9zKr4uLM+vSx/qZvnfDivSrZe/Sll7UfaXlqux+eH7JjmmuZ+T7Xw3q6048E7rweaKxknSM6+VMAFgAAAAAAAAAAAAAAAAAALmzIXn4HUYSLXAwNhwzbOuwVK9icmyrVJvrcu0sU0+K8LnqlhEnpe5PHDZaZp3y0scq7Sx6WN6Lwa+ZLHFx3vaulpdLXy4WZ4/gHN5R7fse4bJOdmVXNTCeF1NSScaibXBvK3RvJCngPWX3ZLJf1OOvJNPNkVPZD1a7E9DY795Xy4ptPuRxyV9mPhEsbWp5SduW+pWfml8iWGIrTtuVYXutfpld+BfUMRFZVLrlJJ/RH2VKrLWMb87O/y+pFkvlc1J6UcficVScozgnbJuNrX80t19GitHaldqzV1yeqXCz0NLZezatKo2lGcX7yvm/F/csbVw1GdtylPfWu7bLzTtmLh03lJqydLI59bUrRd915cVZW7MtLbk27y3s+fD4D+VSvdJxXKTvfxyJVsaTf58LEzDPwXWw9K/wDOay5SXjddnmu5BPaspPOnJWNapsVytk0rWfNklL0aT0nJLlYccm/Zh6YFXGy4Jr5H2G1J2zu/zuauK2Wo5JOT5u1iP+XS/Sl5G/XmjLXw7WMuWLm9V8vmiOpXbyaNpbLvlx6EOO2Xa3MrHSzlc7q4sKrc4f0wo2qRl+qNuz/c/SKuFyOK9OqFoQfKVu6/Y9WONndwuUrjAAdkgAAAAAAAAAAAAAAAAAA29gx+Z2GBON2BPVdTssBJZaE2sbNJ6fU0KdPqUcNbmjSo9DLVRbp3tyLVKKtZ3vzuRUIc38ienCS0s+l0zntaveJ6NSS0fdImp+1717clax9w7vqvzyJlUV7JpePvGcczfFLSjZ2UG+r0LMKbet7cFFX+bPWFgpZSlb85amhTopZJ+UrX7N5dzPrpyilHZ6lbV9HkvPP6F5UIJJaLlHRPl17E0fajuye4+a4eOf1PEqbyUpvlp2aa18y5hanlsprD05ZONrN55Xz5prNEqwtGKStFvhk3e3noJYbNWTa/UnxXkSRk80t2Sas7bifKz4P4FTCxNyUvWpStBZ81FK3S7ufJ4WUndyUVx9l3v3+xdpYOCu4ycVysmlz0dvgeKykv+5Ky/VaP1KmLLkx62z7NtNfTzKU8M09F5NmvXqJau/O26/qU5ShbJ3vpfTyZswt8ptihUlJaZeBRxETRr2V1f4/iZRqyjzRcjN2TjEcL6ef7K/vXyZ3eMmuhwH+oFVbkI85X7L9zc+xj3cOACHQAAAAAAAAAAAAAAAAAAF7ZVS07czq8FVOKoT3ZJ9Tq8DW0IybHQ0K3UvUq+ntMycNnrkaVJR5X8XYyukXo4jT2n+eZPDGPTffz/wAFSnr7sV8SxCEVonfmrfW5ysdZYmWOdv8AcbJqe1Jaetfa/glnYqfwyd9b88vmWI7NguN++XiRxXvi9/zif/lnbz/EfVtKTdlUbeVspNv4nlbPpPWS8VK/ZamlsqrSw7c4wc0uLssul19BwnkuWM7RVqPEJKTVRZ6tW883c8VNpVYZOdRNWdtLJ9TUe1FVTclJR19XG7WnGXHwPGKUZyipU43V92nF3aSzvO1+HUziyWema9s1ZPdjKpN65Ny16WJqFetJOSVS1r3clF5ZuySu/qauFqptRpU9xWTcrK7ds7WVkr2zbI8XiUoyhT11c9W+Hs2dnm/ihcWcp6Z2HqVquSbta95by89bvQs4rDTUbzrtu192Lf1bJMBjZQVqSvLNXurJ/qb42u+JDPD0ov8A6s7vio6J9eb8ScuGM3t/J1yvSKlOjKd36yyXG2Xc+yp/+yT8y5OnRqx3YS4e68r28TAr0qtN2beXn3Ryt3649YqYztl0q5Uh1fd5laoupXliW9fh/ghnV6l4b+kZYxJX8TgPTevepCH6Ytvzf7HY16nM/NtsYn1lacuF7LwWR7MN3nuykADqkAAAAAAAAAAAAAAAAAAA6DYtVNLoc+Wtn4ncl0ZlH6BgkbFCjzZyuAxpvYPFt8Sd2xtU8Hfl2LEcA+Sf518CnSqytk9fgXaFWWXtePUbRUyq1TwytaUX2XDqiZYFPOKWlvaTa769yrSrVHrJLPguxbhXml7ybvxOfGK5V6/lrazav5/F5Hunsm1uPFZ3XZvM9LFS/UrHtYue8mpLds8ubZlxxVyyQ1tlSk3JJuSzs7Jf/Nr8SfCbMrq69lXum1Jb1nnJb3vImpYmds5K/wDae1jZZe0/h9zOGLOeSF7He8vYvFZtK0b+D4vsUsbRnHeiluqSt7ainFO10mlaSdtdTUWLlnnd+OXDhrwK9bEVJf187u19baJuyFxm3Q53yzcZV9VStDpdrV9TAqYl8DqVTjq4pyd87JLPoipPZdPVxt4JpfM8HyfiZ6uUsv8Ah6dH5GOnNrGPhZyco9Gs+RtV5b1rrK3FElKlGOkbW8O/O/YiqTev1vb8yOvxvi3Sx2c9fXmd3VqlKKehQxMI8C3Xm+Zl4yt1Pdjg8tyYPpRjlSpSa1fsrxfE/OTY9Jtpeuq2T9mGS6vizHLxYAAoAAAAAAAAAAAAAAAAAAAAAGxsnG/0vXgdLhcRexwcZWzRvbL2jfJ6k2Dt8PWui/TrS5nNYbFmlRxJOypW5TnLmWKc5cG/PMxaWIfMswqNtP8AOxnFW7WjVd/p+Ik9fO5lPESvxPcKsr6P4mbDWliJ20in4O54VeqtIryvf4oozxcsvujzHGJ8Y34JSv8AUzZrTWIr8EkvI++ur5afD7GasU7/AOfgfJV5Pgx1Z0aNTE1U7uSK9faFS+tvL9inTxMk07Xa4P7H3E4qc3eS7Nfc3asuyWeMm/6vmR/xM3fPTnZFaFaUXdW0tnn2KWIxD1v8SpjU2xZxeJaWpx3pRttxTpxftPXovuyTb23fVrdTTnwXLqzi6k3Jtt3bzbK7pjyACmgAAAAAAAAAAAAAAAAAAAAAAAB9TtofABsYDa1spdzocJtFHDE1DEyho/IywfotDGxL0MfFnB4Tay45GvQx65jqOvp42PInWNictTxiLEMYZaOhjionqVeP4kYKxh9/jEZu3duvE9bEc60bvPt9THljURyxwjLW08VG9+JBVxsTErbRXMx8dt+KyWb6G77MdLidpJZnK7X9I9Y09f1cF4GJjdozqauy5L6lM3re5s9Tm27t3b4s8gGtAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACSnWlHRsAC5S2rJapMt0ttrimAGbJ47dj17Hp7eh17AA2RT2+uCZVq7cm9EkADaKFbFTl70mQgBoAAAAAAAAAAAAAAAAAAP/2Q=="
+                height = "40" width="40"
+            ></iframe>
+
+            <!-- Links -->
+            <a href="https://www.google.com/"> This is an anchor tag</a>
+
+            <!-- List-->
+        <div>
+            <ol> <!-- Ordered Lists-->
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li> <ol>
+                    <li> First Element in the third element of the parent list</li>
+                </ol></li>
+            </ol>
+
+            <ul ><!-- Unordered Lists-->
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+
+            </ul>
+        </div>
+            <!--Tables -->
+            <table border="8">
+                <tr> <!-- Table row-->
+                    <th>Left</th> <!--USed to define a head cell, which also equates to a colum-->
+                    <th>Right</th>
+                </tr>
+                <tr>
+                    <td> Number 1 </td> <!-- td defines a body cell, which equats to a column-->
+                    <td></td>
+                    <td> Number 3</td>
+                </tr>
+
+            </table>
+
+        <br>
+        <br>
+
+        <div>
+            <!-- Forms -->
+            <!-- HTML forms are limited, we can only send POST or GET requests-->
+            <form action = "https://www.google.com/search?" method="GET">
+            <!-- Action is the endpoint, and methos is the HTTP verb-->
+                
+                <input type="text" placeholder="Kittens" name = "q">
+                <input type="text" placeholder="Puppies" name = "a">
+                <input type="text" placeholder="Ducklings" name = "tomato">
+                <input type="submit" value="This is my Submit button!">
+
+            </form>
+        </div>
+        </body>
+</html>
