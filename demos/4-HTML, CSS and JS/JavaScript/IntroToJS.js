@@ -108,27 +108,87 @@ const pi = 3.14;
  * Control flow statements
  * 
  * In JS we get a lot of the same control flow statements has Java
+ *  if and else 
+ *  switch sttements 
+ *  for loop 
+ *  for of loop 
+ *  for in loop
+ *  while loop
  */
 
 //if and else if 
-if(false){
-    var value = "inside block scope!";
-    console.log(value);
-}else if(true){
-    var value = "another block";
-    console.log(value);
-}else{
+// if(false){
+//     var value = "inside block scope!";
+//     console.log(value);
+// }else if(true){
+//     var value = "another block";
+//     console.log(value);
+// }else{
 
-}
-
-//switch sttements 
-//for loop 
-//for each loop 
-//while loop
+// }
 
 
+/**
+ *  Arrays
+ * 
+ *  In JS we can declare arrays like variables
+ *  An array in JS is mutable in size and they don't need to contain the same datatypes
+ * 
+ * Arrays can store "itself" in its elements
+ * If a position is selected to be added to outside the size of the array, 
+ *      it will simply add empty elements inbetween
+ */
+
+let arrayOfPlanets;
+arrayOfPlanets = []; //assigned to an empty array
+arrayOfPlanets = ["Mercury","Venus","Earth"];
+arrayOfPlanets = ["Mercury","Venus","Earth",2,true,undefined];
+arrayOfPlanets = ["Mercury","Venus","Earth",2,true,undefined,["Tomatoes","Apple","Banana"]];
+arrayOfPlanets = ["Mercury","Venus","Earth",2,true,undefined,["Tomatoes","Apple","Banana"],arrayOfPlanets];
 
 
+// console.log(arrayOfPlanets);
+// console.log(arrayOfPlanets[0]);
+// arrayOfPlanets[2] = "Mars";
+// arrayOfPlanets[11] = "Pluto";
+// console.log(arrayOfPlanets);
+
+// for(let i of arrayOfPlanets){
+//     console.log(i);
+// }
+
+/**
+ * Objects in JS
+ * 
+ * In JS, we don't need classes to create an object
+ * Unlike in Java, objects aren't class based and don't inherit through classes 
+ *  (instread through prototypical inheritance)
+ * 
+ * Creating an object in java is similar to a primitive data type
+ * 
+ * Objects are dynamic in JS, they can be modfied during runtime
+ */
+
+let myObject; //declare a variable 
+myObject = {}; //we use curly braces to denote an "object literal"
+myObject = {
+    "key": "value"
+};
+
+let planet = {
+    name: "Earth",
+    "distance": 1,
+    humans: true,
+    orbit: function(){
+        console.log("Look at me, I'm orbiting!")
+    }
+};
+
+planet.weather = "Quite lovely!";
+
+
+// console.log(planet);
+// planet.orbit(); //function is stand alone, a method is a function associated to an object. 
 
 /**
  * Functions
@@ -144,11 +204,156 @@ if(false){
 //  greetings(true,false);
 
 //declare a function:
+
+// dontReturnStuff(12,"this shouldn't work!");
+// greetings(1);
+
+function doStuff(){};
+
+function dontReturnStuff(){
+    console.log("Just printing, not returning!");
+}
+
 function greetings(a,b){
     var num = 7;
     console.log(a + num + b);
     return 0;
 }
 
+//--------------------------Anonymous functions------------------------
+// Theser are functions, that aren't declared. Instead are stored in variables 
+
+let anon = function(a,b){
+    return a*b;
+}
+
+console.log(anon);
+console.log(anon(1,2));
+
+anon = 2;
+
+// console.log(anon(1,2)); //this will throw an error, cause I've replaced the function with a number
+
+//----------------------------Callback function-------------------
+// A function that is passed as a parameter into another function
+
+function inceptionFunction(myFunc){
+    console.log("I'm in the parent function")
+    myFunc(); // We're invoking a function inside of the function
+
+    doStuff(); //THIS IS NOT A CALLBACK FUNCTION
+}
+
+let a1 = function(){
+    console.log("callback function 1");
+}
+
+let a2 = function(){
+    console.log("another callback function");
+}
+
+// inceptionFunction(a1);
+// inceptionFunction(a2);
+
+// ---------------------(ES6) Fat Arrow Notation------------------------
+// Short hand expression for writing out functions 
+let arrow = (x,y) => {return x*y};
+
+let sayHello = name => {
+    console.log(name + " says hello");
+}
+
+// --------------------Self invoking functions --------------------------
+// These are functions that call themselves straightaway 
+// IIFE - Immediately Invokable Funciton expressions 
+
+// let fun1 = function(){
+//     console.log("Inside IIFE");
+// }();
 
 
+/**
+ * Truthy and Falsey values 
+ * 
+ * Everything has a true or false boolean value when used in a conditional statment
+ * 
+ * Example of falsey value is: 0 (every other number is truthy)
+ *                              ""
+ *                              undefined
+ * Let you all discover the rest!
+ */
+
+
+let k;
+k = 0; //not truthy 
+k = -123;
+k = "";
+k = undefined;
+
+if(k){
+    console.log(k + " is truthy!");
+}else{
+    console.log(k + " is not truthy");
+}
+
+/**
+ * Comparison operators
+ * 
+ * == 
+ * ===
+ * !=
+ * >
+ * >=
+ * <
+ * <=
+ */
+
+let b1 = 2;
+let b2 = "2";
+
+// console.log(b1 == b2); // "==" will automatically convert the datatypes into the same type. (type coercion)
+// console.log(b1 === b2); //check the type and the value (no type coercion)
+
+// console.log(1 == true); // will return true
+// console.log("" == 0); //will return true
+
+
+/**
+ * Checking the type and NaN
+ */
+
+// console.log(typeof(b1));
+// console.log(typeof(b2));
+// console.log(typeof({}));
+// console.log(typeof([])); //arrays are objects as well 
+// console.log(typeof(() => {}));
+
+
+//Sometimes we want to do a mathematical operations, we want to check if it's a number
+
+// console.log(isNaN(2)); // 2 is a number, so isNaN will return false;
+// console.log(isNaN("2")); // isNaN will also do automatic type coercion and check the value - also false
+// console.log(isNaN("two")); //this can't be converted to a number by the browser, so it is true. 
+
+// console.log(1/0);
+// console.log(isNaN(Infinity)); // Infinity is a number!? 
+// console.log(0*Infinity); // NaN will be returned because this is considered an invalid operations
+// console.log(Infinity/Infinity);
+
+// console.log(typeof(NaN)); //Not a Number is consdered a number datatype
+
+
+/**
+ * ES6 Template Literal Strings
+ * Much easier to create and format strings. 
+ */
+
+let namePerson = "Bob";
+console.log(namePerson + " says" + "\n hello!");
+
+console.log(`
+
+        ${namePerson}
+                        says
+                                    Hello!
+`);
