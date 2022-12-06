@@ -1,4 +1,11 @@
-console.log("Hello JS!")
+/**
+ * 
+ * Self review material: 
+ * 
+ *      >Errors and how to handle them in JS
+ *      >Control Flow statements in JS
+ *      >Truthy and Falsey values in JS
+ */
 
 
 /**
@@ -43,7 +50,7 @@ console.log("Hello JS!")
  */
 
 /**
- * VAriable declarations
+ * Variable declarations
  * 
  * var vs let vs const
  * 
