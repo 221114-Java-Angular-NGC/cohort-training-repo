@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onclick="alert('inside body!')">
+
+    <div>
+        <h2> Welcome to Bubbling!</h2>
+        <!-- Bubbling is an event propogation from child to parent!-->
+        <!-- Only the same events are going to trigger the bubbling effect!-->
+    </div>
+
+    <div onclick="alert('div again'); event.stopPropagation()">
+        <div ondblclick="alert('INSIDE DIV')">
+            <p onclick="alert('inside paragraph')"> Click me!</p>
+        </div>
+    </div>
+
+    <footer>
+        <h2> Welcome to capturing!</h2>
+        <!-- Capturing stops bubbling from happening, stops the event from propgating all the way.-->
+    </footer>
+    
+</body>
+</html>

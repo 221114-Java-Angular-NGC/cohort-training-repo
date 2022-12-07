@@ -72,8 +72,38 @@ for(let tag of allAnchorTags){
 
     console.log(tag.className);
 
-    if(tag.className != "nav-link disabled"){ //We are disablling all tags that aren't already disabled
+    //We are disablling all tags that aren't already disabled
+    if(tag.className != "nav-link disabled"){ 
         tag.className = "nav-link disabled";
         tag.innerHTML = `<strike>${tag.innerHTML}</strike>`;
     }
 }
+
+/** --------------------Query Selector --------------------------- */
+//Query selector uses CSS selector syntax
+
+let list = document.querySelector(".nav"); //Query selector will return only the first elment 
+let body = document.querySelector("body"); 
+let listOfParagraphs = document.querySelectorAll("p"); //return all elements that match 
+
+console.log(list);
+
+
+/** --------------------Creating a new elment  --------------------------- */
+/**
+ * 1) Create a new element from scratch 
+ * 2) Find an existing element 
+ * 3) Attach the new elment to the existing element
+ */
+
+//Created the element
+let newH3 = document.createElement("h3");
+newH3.innerHTML = "<b><i>Brand</b></i> new element from JS";
+newH3.setAttribute("style","color:violet");
+
+//Find an existing element
+let header = document.querySelector("header"); 
+
+//Attach it as a child element
+
+header.appendChild(newH3);
