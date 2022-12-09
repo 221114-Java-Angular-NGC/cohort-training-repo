@@ -98,14 +98,14 @@ let animal = {
     }
 }
 
-console.log(animal);
+// console.log(animal);
 
 let racoon = {name: "Racoon",__proto__: animal};
 
-console.log(racoon);
-console.log(racoon.name);
-console.log(racoon.ability);
-console.log(racoon.nickname);
+// console.log(racoon);
+// console.log(racoon.name);
+// console.log(racoon.ability);
+// console.log(racoon.nickname);
 
 class Animal{
     constructor(nickname){
@@ -121,6 +121,79 @@ class Racoon extends Animal {
 
 }
 
-//--------------------
+//--------------------ENCAPSULATION-----------------------------
+//Achieving encapsulation using scopes rather than access modifiers. 
+//Restrict access to a variable, so that it is only accessible via a method. 
 
+//We use "Closures" in JS to achieve this effect. 
+
+
+//a function scope variable
+//variable only exists within the function
+function myFunc(){
+    let a = 27; //only accessible inside the function 
+    console.log(a);
+    return a; //returning "a" will give access to the value, but not the variable itself.
+}
+
+// myFunc();
+
+// console.log(myFunc());
+
+let b = myFunc();
+//Instead of returning a value, we can return a function !
+
+function funcGenerator(){
+
+
+    return function generatedFunc(){
+         console.log("inside generated function");
+         return 0;
+        };
+}
+
+let myVar = funcGenerator;
+let myVar2 = funcGenerator();
+// console.log(myVar);
+// console.log(myVar2);
+
+
+function secretGarden(){
+
+    var secret = "my secret";
+    let anotherSecret = "my other secret"
+    let i = 0;
+
+    return function secretDoorway(x){
+
+        if(x == 1){
+            console.log(anotherSecret);
+        }else{
+            i++;
+        secret = `my secret has been accessed ${i} times`
+        console.log(secret);
+        }
+        
+    }
+
+}
+
+let k = 0
+while(k < 1){
+    var leak = "leak";
+    console.log(leak);
+    k++;
+}
+
+console.log(leak);
+
+// let closure = secretGarden();
+
+// console.log(closure);
+
+// closure(1);
+// closure();
+// closure(1);
+// closure();
+// closure(1);
 
