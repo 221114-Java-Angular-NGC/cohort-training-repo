@@ -4,6 +4,7 @@ import { Car } from './Car';
 import { Truck } from './Truck'
 
 /**
+ * TypeScript for Java Developers: https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html
  * 
  * What is TypeScript?
  *      TypeScript is a OOP language with static typing that is a syntatically superset of JavaScript. 
@@ -15,7 +16,7 @@ import { Truck } from './Truck'
  * To install (also require node and npm): 
  *      npm install -g typescript
  * 
- * Browsers can't naitevly run TypeScript files. Instead we need to "transpile" typescript code into 
+ * Browsers can't natively run TypeScript files. Instead we need to "transpile" typescript code into 
  *  javascript code. 
  * 
  * Transpiling vs Compiling?
@@ -38,6 +39,9 @@ console.log("Hello I'm in TypeScript");
 let a = "This is a variable";
 
 console.log(a);
+
+
+//-----------------------------Static Typing-------------------------------------------
 
 //Typescript has support for static typing: 
 
@@ -66,9 +70,9 @@ let n2: void = null;
 let n3: null = undefined; 
 let n4: undefined = null;
 
-//----------------------Data Structures----------------------------
+//-------------------------------Data Structures----------------------------
 
-//Arrays 
+//---Arrays---
 let arr1: any[]; //a array of dynamic size that can store any datatype 
 let arr2: number[]; //still mutable, but can't store anything other than numbers
 let arr3: Array<boolean>;
@@ -77,12 +81,14 @@ arr1 = [1,2,"string",true];
 
 console.log(arr1);
 
-//Tuples - immutable data structures
+//---Tuples--- 
+//immutable data structures
 //fized size and datatypes have to be in a specific order 
 let tuple1: [string,boolean,number];
 tuple1 = ['hello there',true,1];
 
-//Enum 
+//----Enum----
+// enum: https://www.typescriptlang.org/docs/handbook/enums.html#string-enums
 // A unique type that has a fixed set of values 
 // An enumeration is a collection of constants, representational values 
 
@@ -102,13 +108,17 @@ if(myCarStatus == OFF){
 enum carStates {OFF = 0, IDLE = 1, ACCEL = 2, CRUISING=-27};
 
 //defaults to 0,1,2,... etc. 
-enum otherStates {JUMPING, HOPPING, STOPPING};
+//We can also add string enums but you cannot use strings and numbers at the same time.
+enum otherStates {JUMPING="JUMP",STANDING="STAND"};
 
 if(myCarStatus == carStates.CRUISING){
     //code executes if car state is cruising!
 }
 
-//----------------Object ---------------------------------
+//----------------Object---------------------------------
+
+//https://stackoverflow.com/questions/49464634/difference-between-object-and-object-in-typescript
+// The above link is a stack overflow, but it's the most succinct source I've seen so far.
 
 let myObj: Object|object|{}; //different ways to declare a type of object.
 
@@ -129,11 +139,26 @@ function finalFunc(): string|void{
 //----------------OOP in TS---------------------------------------
 // Abstraction, Inheritance, Polymorphism, Encapsulation 
 
-//Abstraction 
-// In Java, Abstraction is achieved using Interfaces and Abstract Classes
-// We do get interfaces in TS 
-
-//In TS, interfaces are property driven rather than behavior driven. 
+//------------------------Abstraction------------------------------------ 
+/**
+ * NOTE: We do get Abstract Classes in TS, they behave similarly to Abstract Classes in Java 
+ * 
+ * In TypeScript we get Interfaces and Abstract Classess.
+ * 
+ * Interfaces:
+ *     Both properties and methods can be declared to be required by child classes
+ *     Properties are implicitly "public" and can't be modified to "protected" or "private" levels of access
+ *     Classes can implement multiple interfaces
+ *      
+ * Abstract Classes: 
+ *      Can define abstract methods inside of class - using "abstract" keyword, but not required. 
+ *      Constructors can be declared inside 
+ *      Cannot extend multiple Abstract classes
+ * 
+ * Java vs TypeScript: 
+ *      Unlike in Java, we can instantiate interfaces directly without needing to declare a child class to implement it. 
+ *      
+ */
 interface Moon {
     name: string
 }
@@ -145,9 +170,28 @@ interface Planet{
     orbit(): void
 }
 
+//Classes can implement multiple interfaces 
+//Interfaces can also extend multiple other interfaces
+
+interface A{};
+interface B{};
+interface C extends A,B{}
+interface D{}
+
+abstract class E implements C,D {};
+class F extends E{};
+
+//Abstract Class 
+abstract class absClass{
+    name: string;
+    constructor(name: string){this.name = name}
+    public abstract abstractMethod();
+}
+
+//Instatiating interface datatypes directly. 
 let deimos: Moon = {name:"Deimos"};
 
-let mars: Planet|Moon = {
+let mars: Planet = {
     name: "Mars",
     hasRings: false,
     moons: [deimos],
@@ -155,45 +199,73 @@ let mars: Planet|Moon = {
 }
 
 //------------------------Encapsulation----------------------
+/**
+ * Typescript has support for access modifiers and Setter and Getter methods 
+ * 
+ * Access Modifers: 
+ *     private, protected and public 
+ * 
+ * Getters and Setters: 
+ *      Are created with using "set" and "get" keywords
+ *      Method invokation is syntaxially similar to refering to them as properties. 
+ *      e.g. instead of "obj.setName(newName)" we do "obj.Name = newName"
+ *          
+ * NOTE: When transpiling, remember to transpile to es2015 "tsc -t es2015 <file>.ts"
+ *          JS does not have support for getters and setters before es2015.
+ */
 
-class Star implements Moon, Planet{
-    // We now have access to access modifiers,
-    // private, public and protected 
-    // (no more closure for us!)
+class Star {
 
-    public name: string; //this is accessible anywhere 
-    hasRings: boolean; //default to public 
-    
-    protected nickname: string; //accessible internally to the class or any child classes
+    private name: string;
+    protected mass: number;
+    public numberOfPlanets: number;
 
-    private planets: number; //only accessible internally 
-
-    public moons: Array<Moon>;
-
-    public orbit(): void { //can also have access modifiers with functions/methods
-
+    constructor(name: string, mass: number, numberOfPlanets: number){
+        this.name = name;
+        this.mass = mass;
+        this.numberOfPlanets = numberOfPlanets;
     }
 
-    get Planets(): number{
-        return this.planets;
+    get Name(): string {
+        return this.name;
     }
 
-    set Planets(planets: number){
-        this.planets = planets;
+    set Name(name: string){
+        this.name = name;
     }
+
+    get NumberOfPlanets(): number {
+        return this.NumberOfPlanets;
+    }
+
 }
 
+let theSun: Star = new Star("The Sun",1,8);
+let bigSun: Star = new Star("Alpha A",10,4);
 
-// In Typscript we also have "getters " and "setters"
-// This time thought, they are explicitily given a label . 
+//Getter
+// console.log(asty.Name()); this is how we would do it in Java
+console.log(theSun.Name);
 
 
+//Setter
+// asty.set("new name"); How we would do it in Java
+theSun.Name = "new Name";
+console.log(theSun.Name);
 
-
-//---------------------Polymorphism-----------------------------------------
-//We don't have overloading in TS, but we do have optional parameters. 
-// Giving us flexibility in how we utilize a method/constructor 
-// A question mark will denote something has optional 
+//------------------Inheritance--------------------------------
+/**
+ * TypeScript also support for Class based inheritance, using the Extends keyword
+ * 
+ * Child Classes will inherit methods and properties from their parent classes.
+ * Like Java, we can only extend a single class at a time but you can have multilevel inheritance. 
+ * 
+ * Constructors are implictly inherited from parent class. If no constructor is declared in the 
+ *  child class then the parent class constructor will be used. 
+ * If a constructor is declared, then you have to explicitly use the "super" keyword to call the 
+ *  parent constructor. 
+ * 
+ */
 
 class Asteroid{
 
@@ -219,23 +291,28 @@ class Asteroid{
     }
 }
 
-let asty: Asteroid = new Asteroid("asteroid-127","asty");
-let asty2: Asteroid = new Asteroid("asteroid-128");
+class Meteor extends Asteroid{};
 
-//getter
-// console.log(asty.Name()); this is how we would do it in Java
-console.log(asty.Name);
+let met1: Meteor = new Meteor("meteor-12","big one"); //using parent contructor 
+met1.Name = "new name"; //using parent setters
+console.log(met1.Name); //using parent getter
+met1.crash(); //parent crash() method
 
-
-//Setter
-// asty.set("new name");
-asty.Name = "new Name";
-
-console.log(asty.Name);
-
-//------------------Inheritanc--------------------------------
-//When overriding a method, you can't provide more arguments but you take them away.
-//Methods cannot be more restrictive. 
+//---------------------Polymorphism-----------------------------------------
+/**
+ *  Overriding:
+ *      Child classes can modify the behaviors the inherit from their parent class. 
+ *      Method signature has to match, you can't add arguments and the level of access 
+ *          have to be the same or greater. 
+ * 
+ *  
+ *  Overloading: 
+ *      Unlike Java, we don't decalare multiple methods with different parameters. 
+ *      Instead we use optional parameters, these are denoted by "?"
+ *      (Optional parameters have to be on the right hand side or required parameters)
+ *  
+ * 
+ */
 
 class Meteorite extends Asteroid{
 
@@ -262,7 +339,10 @@ bigDino.crash();
 console.log(bigDino.Name);
 
 
-//from out other file 
+
+//-----------------------------------------------------------------------------------------
+//--------------------------Using Imported Classes----------------------------------------
+
 let aston:Car = new Car("Bobby",0);
 
 let toyota:Truck = {
