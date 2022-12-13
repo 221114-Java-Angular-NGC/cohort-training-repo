@@ -130,7 +130,7 @@ class Asteroid {
         this.name = name;
         this.nickname = nickname;
     }
-    crash() {
+    crash(x) {
         console.log("Crashing into a planet!");
     }
     get Name() {
@@ -150,3 +150,13 @@ console.log(asty.Name);
 // asty.set("new name");
 asty.Name = "new Name";
 console.log(asty.Name);
+//------------------Inheritanc--------------------------------
+class Meteorite extends Asteroid {
+    crash() {
+        console.log("Crashing into a planet with a very BIG BOOM!");
+    }
+}
+//When a constructor isn't provided, it'll default to parent constructor
+let bigDino = new Meteorite("Meteorite-123", "The Big One");
+bigDino.crash();
+console.log(bigDino.Name);

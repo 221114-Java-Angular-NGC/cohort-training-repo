@@ -1,5 +1,8 @@
 /**This is TypeScript Comments! */
 
+import { Car } from './Car';
+import { Truck } from './Truck'
+
 /**
  * 
  * What is TypeScript?
@@ -105,6 +108,10 @@ if(myCarStatus == carStates.CRUISING){
     //code executes if car state is cruising!
 }
 
+//----------------Object ---------------------------------
+
+let myObj: Object|object|{}; //different ways to declare a type of object.
+
 //------------------Functions-----------------------------------
 
 function myFunc(a,b,c){
@@ -187,6 +194,7 @@ class Star implements Moon, Planet{
 //We don't have overloading in TS, but we do have optional parameters. 
 // Giving us flexibility in how we utilize a method/constructor 
 // A question mark will denote something has optional 
+
 class Asteroid{
 
     private name: string;
@@ -224,3 +232,40 @@ console.log(asty.Name);
 asty.Name = "new Name";
 
 console.log(asty.Name);
+
+//------------------Inheritanc--------------------------------
+//When overriding a method, you can't provide more arguments but you take them away.
+//Methods cannot be more restrictive. 
+
+class Meteorite extends Asteroid{
+
+    
+//When we declare an access modifier in the parameter, we're effectively declaring it as 
+// a member of the class. 
+
+    constructor(name: string, nickname: string, private size?: number){
+        super(name,nickname);
+        this.size = size;
+    }
+
+    crash(): void{
+        super.crash(); //still utilize our parent function
+        console.log("Crashing into a planet with a very BIG BOOM!");
+
+    }
+
+}
+//When a constructor isn't provided, it'll default to parent constructor
+let bigDino: Meteorite = new Meteorite("Meteorite-123","The Big One"); 
+
+bigDino.crash();
+console.log(bigDino.Name);
+
+
+//from out other file 
+let aston:Car = new Car("Bobby",0);
+
+let toyota:Truck = {
+    name: "My Truck",
+    capacity: 100
+}
