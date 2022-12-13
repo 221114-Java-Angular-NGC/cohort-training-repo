@@ -108,8 +108,8 @@ if(myCarStatus == OFF){
 enum carStates {OFF = 0, IDLE = 1, ACCEL = 2, CRUISING=-27};
 
 //defaults to 0,1,2,... etc. 
-//We can also add string enums but you cannot use strings and numbers at the same time.
-enum otherStates {JUMPING="JUMP",STANDING="STAND"};
+//We can also add string enums and you can use strings and numbers at the same time.
+enum otherStates {JUMPING="JUMP",STANDING=0,STUFF};
 
 if(myCarStatus == carStates.CRUISING){
     //code executes if car state is cruising!
