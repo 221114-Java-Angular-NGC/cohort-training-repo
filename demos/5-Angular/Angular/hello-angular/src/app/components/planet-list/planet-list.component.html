@@ -1,0 +1,63 @@
+
+<!-- My goal is to create a dynamic page to display my planets! -->
+
+<div class='panel panel-primary'>
+
+    <div class = 'panel-heading'>
+        <h1> Hello {{user}} ! You're age is {{age + 1}}</h1> <!-- Interpolation {{}} - Gives us 1-way data binding-->
+        <!-- Interpolation is achieved using {{}}, it evaluates basic expressions for us. This is called 1-way data 
+            binding because it is projecting values from the TS file to the HTML file.-->
+    </div>
+
+
+    <!-- My goal here is to provide a search bar to search the planet table and only return the matching results-->
+    <!-- I need to provide a form of 2-way binding, to send information from HTML to TS and vice versa -->
+    <div class='panel-body'>
+        <div class = "row">
+            <div class = "col-md-2">Filter By: </div>
+            <div class = 'col-md-4'>
+                <!-- 
+                    The [()] syntax is used for 2-way binding. The information is being propogated from both TS 
+                        and HTML. If one changes, then the other changes - hence 2-way binding 
+                -->
+                <input type = "text" [(ngModel)] = 'InputField' placeholder="Filter">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- My goal here is to create a button that will toggle the table-->
+    <button class='btn btn-primary' (click)='toggleTable()'> <!-- Event binding ()-->
+        {{showTable? 'Hide Table':'Show Table'}}
+    </button>
+
+    <div class = 'table-responsive'>
+
+        <table class = 'table' *ngIf = 'filteredPlanets.length && showTable'>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Livibility</th>
+                </tr>
+            </thead>
+            <tbody> <!-- I want to create a for loop that will attach as many as rows as planets that I have-->
+                <tr *ngFor = 'let i of filteredPlanets'> <!-- *ngFor is a structural directive -->
+                    <!-- Structural directives will modify the structure of the DOM-->
+                    <td>
+                        <img [src] = 'i.image' [alt] = 'i.name'
+                        [style.width.px] = 'imageWidth'
+                        [style.margin.px] = 'imageMargin'> <!-- Another 1-way binding, Property binding []-->
+                    </td>
+                    <td>
+                        <p> {{i.name | prepend: 'Planet: '}}</p> <!-- Utilising the "prepend" pipe-->
+                    </td>
+                    <td>
+                        {{i.livibility}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
