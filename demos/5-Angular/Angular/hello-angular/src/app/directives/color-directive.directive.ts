@@ -1,7 +1,7 @@
 import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[AppColorDirective]'
+  selector: '[appColorDirective]'
 })
 export class ColorDirectiveDirective {
 
@@ -10,13 +10,17 @@ export class ColorDirectiveDirective {
    *  In this case I'm defining a functino that will trigger over an event, mouseenter
    */
 
-  @HostListener('mouseenter') 
-  onMouseEnter(){
-    this.element.nativeElement.style.color = "ForestGreen";
-  }
+  // @HostListener('mouseenter') 
+  // onMouseEnter(){
+  //   this.element.nativeElement.style.color = "ForestGreen";
+  // }
 
 
   //Angular will create this directive, provide the dependencies we need by looking at the construtor. 
-  constructor(private element: ElementRef) { }
+  constructor(private element: ElementRef) { 
+
+    this.element.nativeElement.style.color = "ForestGreen"
+
+  }
 
 }

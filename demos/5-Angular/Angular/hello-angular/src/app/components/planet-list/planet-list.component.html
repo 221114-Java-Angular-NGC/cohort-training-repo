@@ -36,8 +36,8 @@
         <table class = 'table' *ngIf = 'filteredPlanets.length && showTable'>
             <thead>
                 <tr>
-                    <th>Image</th>
-                    <th>Name</th>
+                    <th [ngStyle]="{'background-color': 'red'}">Image</th>
+                    <th >Name</th>
                     <th>Livibility</th>
                 </tr>
             </thead>
@@ -49,10 +49,11 @@
                         [style.width.px] = 'imageWidth'
                         [style.margin.px] = 'imageMargin'> <!-- Another 1-way binding, Property binding []-->
                     </td>
-                    <td>
+                    <td [ngStyle]="{'background-color': i.name == 'Earth'? 'green':'red'}"> <!-- We can provide conditional styling-->
                         <p> {{i.name | prepend: 'Planet: '}}</p> <!-- Utilising the "prepend" pipe-->
                     </td>
-                    <td>
+                    <td [ngClass]="{'livable':i.livibility == 5,
+                                    'not-livable': i.livibility < 5 }"> <!-- We can use ngClass to set the element to have dynamic classes-->
                         {{i.livibility}}
                     </td>
                 </tr>
