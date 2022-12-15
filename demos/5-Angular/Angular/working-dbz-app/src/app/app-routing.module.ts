@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginButtonComponent } from './components/login-button/login-button.component';
 import { RegisterComponent } from './components/register/register.component';
 
+//each component will have a URI corrlated as its route
+//this is stored as an array of objects in this class
 const routes: Routes = [
   {
     path: 'login',
@@ -42,6 +44,7 @@ const routes: Routes = [
     path: 'browse',
     component: BrowseComponent
   },
+  //it is common practice to also set a default route for our index pages in our app (aka start pages)
   {
     path: '',
     redirectTo: '/login',

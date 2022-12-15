@@ -11,9 +11,15 @@ import { ClientMessage } from '../models/client-message';
 })
 export class UserService {
   isAuthenticated: boolean = false;
-  user$!: User;
-  url: string = environment.APP_URL;
+  user$!: User; //! = variable cannot have null/undefined values, $ refers to that component/object instance
+  url: string = environment.APP_URL; //this value for our server will be stored in the environment.ts (aka our backend url)
   
+  //httpclient allows use to make HTTP requests to our server and return our info inside of an Observable
+
+  //Observables are similar to promises in JS but they only emit their info to its subscribers via subscribe
+  
+  //now for this service to use HTTPClient, it has to be injected into this service's constructor
+  //this is known as dependency injection
   constructor(private http: HttpClient, private router: Router) { }
   
   //authenication methods
@@ -52,6 +58,10 @@ export class UserService {
     };
 
     console.log("in userservice method: body=" + body)
+
+    //this is an httpclient usage example
+    //http client will have built-in methods for each HTTP verb
+    //now any component that is subscribed to this service will have access to this info through the login() method
     this.http.post<ClientMessage>(`${this.url}users/login`, JSON.stringify(body))
     .subscribe(data => {
           console.log("Backend data: " + data);
