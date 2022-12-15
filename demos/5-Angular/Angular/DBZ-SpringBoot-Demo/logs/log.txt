@@ -1,0 +1,168 @@
+2022-09-13 13:46:50 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.UserController : registerNewProfile ]
+2022-09-13 13:46:50 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 13:46:50 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 13:46:51 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.sun.proxy.$Proxy149 : save ]
+2022-09-13 13:46:51 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.sun.proxy.$Proxy149 : save ]
+2022-09-13 13:46:51 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 13:46:51 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: true
+2022-09-13 13:46:51 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-13 13:46:51 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.UserController : registerNewProfile ]
+2022-09-13 13:50:46 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.UserController : registerNewProfile ]
+2022-09-13 13:50:46 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 13:50:46 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 13:50:46 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.sun.proxy.$Proxy149 : save ]
+2022-09-13 13:50:46 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.sun.proxy.$Proxy149 : save ]
+2022-09-13 13:50:46 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 13:50:46 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: true
+2022-09-13 13:50:46 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-13 13:50:46 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.UserController : registerNewProfile ]
+2022-09-13 13:51:41 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.UserController : getAllUsers ]
+2022-09-13 13:51:41 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : getAllUsers ]
+2022-09-13 13:51:41 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : getAllUsers ]
+2022-09-13 13:51:41 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : getAllUsers ]
+2022-09-13 13:51:41 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: [User(id=1, username=bob, password=password, firstName=Bobby, lastName=Jones, email=bobby.jones@revature.com, blogs=[])]
+2022-09-13 13:51:41 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-13 13:51:41 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.UserController : getAllUsers ]
+2022-09-13 13:52:52 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.BlogController : createNewPost ]
+2022-09-13 13:52:52 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-13 13:52:52 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-13 13:52:52 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.sun.proxy.$Proxy148 : save ]
+2022-09-13 13:52:52 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.sun.proxy.$Proxy148 : save ]
+2022-09-13 13:52:52 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-13 13:52:52 WARN  revature.aspects.LoggingAspect:46 - Unable to execute around advice: detached entity passed to persist: com.revature.models.User; nested exception is org.hibernate.PersistentObjectException: detached entity passed to persist: com.revature.models.User
+2022-09-13 13:52:52 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-13 13:52:52 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.BlogController : createNewPost ]
+2022-09-13 13:57:35 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.UserController : registerNewProfile ]
+2022-09-13 13:57:35 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 13:57:35 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 13:57:35 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.sun.proxy.$Proxy147 : save ]
+2022-09-13 13:57:35 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.sun.proxy.$Proxy147 : save ]
+2022-09-13 13:57:35 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 13:57:35 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: true
+2022-09-13 13:57:35 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-13 13:57:35 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.UserController : registerNewProfile ]
+2022-09-13 13:57:42 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.BlogController : createNewPost ]
+2022-09-13 13:57:42 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-13 13:57:42 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-13 13:57:42 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.sun.proxy.$Proxy146 : save ]
+2022-09-13 13:57:42 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.sun.proxy.$Proxy146 : save ]
+2022-09-13 13:57:42 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-13 13:57:42 WARN  revature.aspects.LoggingAspect:46 - Unable to execute around advice: detached entity passed to persist: com.revature.models.User; nested exception is org.hibernate.PersistentObjectException: detached entity passed to persist: com.revature.models.User
+2022-09-13 13:57:42 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-13 13:57:42 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.BlogController : createNewPost ]
+2022-09-13 14:01:28 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.UserController : registerNewProfile ]
+2022-09-13 14:01:28 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 14:01:28 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 14:01:28 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.sun.proxy.$Proxy147 : save ]
+2022-09-13 14:01:28 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.sun.proxy.$Proxy147 : save ]
+2022-09-13 14:01:28 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 14:01:28 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: true
+2022-09-13 14:01:28 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-13 14:01:28 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.UserController : registerNewProfile ]
+2022-09-13 14:01:32 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.BlogController : createNewPost ]
+2022-09-13 14:01:32 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-13 14:01:32 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-13 14:01:32 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.sun.proxy.$Proxy146 : save ]
+2022-09-13 14:01:32 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.sun.proxy.$Proxy146 : save ]
+2022-09-13 14:01:32 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-13 14:01:32 WARN  revature.aspects.LoggingAspect:46 - Unable to execute around advice: detached entity passed to persist: com.revature.models.User; nested exception is org.hibernate.PersistentObjectException: detached entity passed to persist: com.revature.models.User
+2022-09-13 14:01:32 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-13 14:01:32 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.BlogController : createNewPost ]
+2022-09-13 14:22:51 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.UserController : registerNewProfile ]
+2022-09-13 14:22:51 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 14:22:51 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 14:22:51 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.sun.proxy.$Proxy147 : save ]
+2022-09-13 14:22:52 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.sun.proxy.$Proxy147 : save ]
+2022-09-13 14:22:52 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-13 14:22:52 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: true
+2022-09-13 14:22:52 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-13 14:22:52 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.UserController : registerNewProfile ]
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.BlogController : createNewPost ]
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : getUserById ]
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : getUserById ]
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.sun.proxy.$Proxy147 : findById ]
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.sun.proxy.$Proxy147 : findById ]
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : getUserById ]
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: Optional[User(id=1, username=bob, password=password, firstName=Bobby, lastName=Jones, email=bobby.jones@revature.com, blogs=[])]
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.sun.proxy.$Proxy146 : save ]
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.sun.proxy.$Proxy146 : save ]
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: Blog(id=1, title=I love DBZ, subject=Best Show on the Planet, body=Goku is the best main character ever!, categories=dbz-fan-blog, dbz-fan, owner=User(id=1, username=bob, password=password, firstName=Bobby, lastName=Jones, email=bobby.jones@revature.com, blogs=[]))
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-13 14:23:09 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.BlogController : createNewPost ]
+2022-09-13 14:23:36 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.BlogController : getAllBlogs ]
+2022-09-13 14:23:36 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.BlogServiceImpl : getAllBlogs ]
+2022-09-13 14:23:36 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.BlogServiceImpl : getAllBlogs ]
+2022-09-13 14:23:36 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.BlogServiceImpl : getAllBlogs ]
+2022-09-13 14:23:36 WARN  revature.aspects.LoggingAspect:46 - Unable to execute around advice: null
+2022-09-13 14:23:36 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-13 14:23:36 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.BlogController : getAllBlogs ]
+2022-09-14 04:53:38 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.UserController : registerNewProfile ]
+2022-09-14 04:53:38 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-14 04:53:38 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-14 04:53:38 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ jdk.proxy4.$Proxy148 : save ]
+2022-09-14 04:53:38 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ jdk.proxy4.$Proxy148 : save ]
+2022-09-14 04:53:38 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : registerUser ]
+2022-09-14 04:53:38 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: true
+2022-09-14 04:53:38 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-14 04:53:38 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.UserController : registerNewProfile ]
+2022-09-14 04:53:42 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.UserController : loginUser ]
+2022-09-14 04:53:42 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : login ]
+2022-09-14 04:53:42 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : login ]
+2022-09-14 04:53:42 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ jdk.proxy4.$Proxy148 : findByUsernameStartsWith ]
+2022-09-14 04:53:42 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ jdk.proxy4.$Proxy148 : findByUsernameStartsWith ]
+2022-09-14 04:53:42 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : login ]
+2022-09-14 04:53:42 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: true
+2022-09-14 04:53:42 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-14 04:53:42 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.UserController : loginUser ]
+2022-09-14 04:53:47 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.UserController : getUserByUsername ]
+2022-09-14 04:53:47 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : getUserByUsername ]
+2022-09-14 04:53:47 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : getUserByUsername ]
+2022-09-14 04:53:47 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ jdk.proxy4.$Proxy148 : findByUsernameStartsWith ]
+2022-09-14 04:53:47 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ jdk.proxy4.$Proxy148 : findByUsernameStartsWith ]
+2022-09-14 04:53:47 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : getUserByUsername ]
+2022-09-14 04:53:47 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: User(id=1, username=bob, password=password, firstName=Bobby, lastName=Jones, email=bobby.jones@revature.com, blogs=[])
+2022-09-14 04:53:47 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-14 04:53:47 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.UserController : getUserByUsername ]
+2022-09-14 04:53:55 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.UserController : getAllUsers ]
+2022-09-14 04:53:55 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : getAllUsers ]
+2022-09-14 04:53:55 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : getAllUsers ]
+2022-09-14 04:53:55 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : getAllUsers ]
+2022-09-14 04:53:55 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: [User(id=1, username=bob, password=password, firstName=Bobby, lastName=Jones, email=bobby.jones@revature.com, blogs=[])]
+2022-09-14 04:53:55 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-14 04:53:55 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.UserController : getAllUsers ]
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.BlogController : createNewPost ]
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : getUserById ]
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : getUserById ]
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ jdk.proxy4.$Proxy148 : findById ]
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ jdk.proxy4.$Proxy148 : findById ]
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : getUserById ]
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: Optional[User(id=1, username=bob, password=password, firstName=Bobby, lastName=Jones, email=bobby.jones@revature.com, blogs=[])]
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ jdk.proxy4.$Proxy147 : save ]
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ jdk.proxy4.$Proxy147 : save ]
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.BlogServiceImpl : createNewBlogPost ]
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:44 - Results of this method invoking/proceeding is: Blog(id=1, title=I love DBZ, subject=Best Show on the Planet, body=Goku is the best main character ever!, categories=dbz-fan-blog, dbz-fan, owner=User(id=1, username=bob, password=password, firstName=Bobby, lastName=Jones, email=bobby.jones@revature.com, blogs=[]))
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-14 04:53:59 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.BlogController : createNewPost ]
+2022-09-14 04:54:03 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.UserController : getAllUsers ]
+2022-09-14 04:54:03 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : getAllUsers ]
+2022-09-14 04:54:03 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : getAllUsers ]
+2022-09-14 04:54:03 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : getAllUsers ]
+2022-09-14 04:54:03 WARN  revature.aspects.LoggingAspect:46 - Unable to execute around advice: null
+2022-09-14 04:54:03 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-14 04:54:03 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.UserController : getAllUsers ]
+2022-09-14 04:54:10 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.controllers.UserController : getUserByUsername ]
+2022-09-14 04:54:10 INFO  revature.aspects.LoggingAspect:37 - Around advice for: [ com.revature.services.UserServiceImpl : getUserByUsername ]
+2022-09-14 04:54:10 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ com.revature.services.UserServiceImpl : getUserByUsername ]
+2022-09-14 04:54:10 INFO  revature.aspects.LoggingAspect:21 - Before advice for: [ jdk.proxy4.$Proxy148 : findByUsernameStartsWith ]
+2022-09-14 04:54:10 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ jdk.proxy4.$Proxy148 : findByUsernameStartsWith ]
+2022-09-14 04:54:10 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.services.UserServiceImpl : getUserByUsername ]
+2022-09-14 04:54:10 WARN  revature.aspects.LoggingAspect:46 - Unable to execute around advice: null
+2022-09-14 04:54:10 INFO  revature.aspects.LoggingAspect:50 - End of Around Advice
+2022-09-14 04:54:10 INFO  revature.aspects.LoggingAspect:27 - After advice for: [ com.revature.controllers.UserController : getUserByUsername ]
