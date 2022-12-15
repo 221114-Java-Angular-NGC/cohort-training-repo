@@ -17,8 +17,10 @@
               </thead>
               <tbody id="blog-content">
                 <tr *ngFor="let blog of blogs; trackBy: trackItem" id="data-row">
+                  <!-- Pipes are used to transform our data into whatever format we desire -->
+                  <!-- usually pipes are used in html templated and denoted with | symbol -->
                   <th class="text-white">{{ blog.id }}</th>
-                  <td class="text-white">{{ blog.title }}</td>
+                  <td class="text-white">{{ blog.title | uppercase }}</td>
                   <td class="text-white">{{ blog.subject }}</td>
                   <td class="text-white">{{ blog.body }}</td>
                   <td class="text-white">{{ blog.categories }}</td>

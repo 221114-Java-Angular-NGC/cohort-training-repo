@@ -29,7 +29,7 @@ export class UserService {
     }else{
       console.log(`Sorry, no authenication token present for this session. Please login to resolve this issue.`)
     }
-    return this.isAuthenticated;
+    return !this.isAuthenticated;
   }
 
   register(user: User): void {

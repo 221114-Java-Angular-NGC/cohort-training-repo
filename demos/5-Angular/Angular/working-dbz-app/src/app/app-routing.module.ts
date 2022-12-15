@@ -8,6 +8,7 @@ import { BrowseComponent } from './components/browse/browse.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginButtonComponent } from './components/login-button/login-button.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AuthGuard } from './guards/auth.guard';
 
 //each component will have a URI corrlated as its route
 //this is stored as an array of objects in this class
@@ -18,7 +19,9 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    //to apply our route guard, we have to set a CanActivate property for the route that we are protecting
+    canActivate: [AuthGuard]
   },
   {
     path: 'blogs/view-all',

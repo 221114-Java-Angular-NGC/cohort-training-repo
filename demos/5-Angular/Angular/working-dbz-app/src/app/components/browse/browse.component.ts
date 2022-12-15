@@ -10,6 +10,7 @@ import { BlogService } from 'src/app/services/blog.service';
   styleUrls: ['./browse.component.css']
 })
 export class BrowseComponent implements OnInit {
+
   blogs!: Blog[];
   newBlogs!: Blog[];
   public blog!: Observable<Blog>;
@@ -20,10 +21,15 @@ export class BrowseComponent implements OnInit {
     return `${item.id}-${index}`;
   }
   
+  //this is a lifecycle hook that is used when initializing your components
   ngOnInit(): void {
+
     this.route.params.subscribe(params => {
       if(params.searchTerm){
+        //call our view-all from our service that is using httpclient
+        //this will return an array of observables that are of type Blog
         this.service.getAllBlogs().subscribe(blogs => {
+          
           this.blogs = blogs.filter(blog => blog.title.toLowerCase().includes(params.searchTerm.toLowerCase()));
           console.log("Search results: " + JSON.stringify(this.blogs))
         })
