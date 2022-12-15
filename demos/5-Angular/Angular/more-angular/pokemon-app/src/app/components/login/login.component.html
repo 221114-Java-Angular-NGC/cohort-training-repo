@@ -1,0 +1,31 @@
+<div class="container text-center login-screen" id="login-container" style="display: none;">
+    <ng-container *ngIf="(isAuthenticated$ | async) === false else loggedOut" class="logout-screen" id="logout-btn">
+      <button (click)="logout()" class="login-btn">Log out</button>
+    </ng-container>
+  
+    <ng-template #loggedOut class="center-screen login-screen" id="login-form">
+      <h4 class="main-title">Welcome to the Site</h4>
+      <p class="desc">Please sign in</p>
+      <form class="text-center center">
+          <div class="form-row">
+              <div class="form-group col-md-12 mb-2">
+                  <label for="inputFirstName">Username</label>
+                  <input [(ngModel)]="user.username" type="text" name="username" class="form-control mx-auto my-0" id="inputUsername">
+              </div>
+              <div class="form-group col-md-12 mb-5">
+                  <label for="inputLastName">Password</label>
+                  <input [(ngModel)]="user.password" type="password" name="password" class="form-control mx-auto my-0" id="inputPassword">
+              </div>
+          </div>
+          <button (click)="login($event)" class="btn btn-primary login-btn">Log in</button>
+      </form>
+  
+      <footer id="register-section" class="fixed-bottom bottom-10 login-screen">
+          <div class="text-center center">
+              <p class="info-card">Don't have an account? Sign up <a routerLink="/register">here</a>!</p>
+              <br>
+              <img src="./assets/images/goku-icon.png" alt="Goku Icon" class="logo">
+          </div>
+      </footer>
+    </ng-template>
+  </div>
