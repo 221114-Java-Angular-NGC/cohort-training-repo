@@ -47,12 +47,7 @@ import { ProfileDetailsComponent } from './components/profile-details/profile-de
     HttpClientModule,
     NgbModule,
     FormsModule,
-    MdbModalModule,
-     // Import the module into the application, with configuration
-     AuthModule.forRoot({
-      domain: environment.AUTH0_DOMAIN,
-      clientId: environment.AUTH0_CLIENT_ID
-    })
+    MdbModalModule
   ],
   providers: [
     {
