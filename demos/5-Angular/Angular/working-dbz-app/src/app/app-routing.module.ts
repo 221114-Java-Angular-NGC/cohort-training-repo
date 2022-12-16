@@ -7,6 +7,7 @@ import { BrowseComponent } from './components/browse/browse.component';
 
 import { HomeComponent } from './components/home/home.component';
 import { LoginButtonComponent } from './components/login-button/login-button.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
 
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'browse',
     component: BrowseComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   },
   //it is common practice to also set a default route for our index pages in our app (aka start pages)
   {

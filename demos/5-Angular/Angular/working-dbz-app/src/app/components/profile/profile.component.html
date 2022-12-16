@@ -1,0 +1,28 @@
+<h2 class="title">My Profile Information</h2>
+
+<table class="table profile-info">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.email}}</td>
+            <td><button (click)="showDetails(user)">Edit</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Details:</h3>
+<app-profile-details [user]="selectedUser" (userChanges)="update($event)"></app-profile-details>

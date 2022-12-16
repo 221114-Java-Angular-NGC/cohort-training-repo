@@ -23,6 +23,8 @@ import { RegisterComponent } from './components/register/register.component';
 
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { SearchComponent } from './components/search/search.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileDetailsComponent } from './components/profile-details/profile-details.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { SearchComponent } from './components/search/search.component';
     CreateComponent,
     BrowseComponent,
     RegisterComponent,
-    SearchComponent
+    SearchComponent,
+    ProfileComponent,
+    ProfileDetailsComponent
   ],
   imports: [
     BrowserModule,
