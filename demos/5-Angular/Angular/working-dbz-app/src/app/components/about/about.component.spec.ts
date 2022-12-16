@@ -17,7 +17,7 @@ describe('AboutComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({ //this configures the environment for the class we want to test
       declarations: [ AboutComponent ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ] //will allow this component to run its test in isolation to other components that are also rendered on the webpage at the same time (aka login-buttom, navbar, etc.)
     })
     //after set the environment, we will be loading in all components
     .compileComponents();
@@ -52,4 +52,9 @@ describe('AboutComponent', () => {
     //now we will check to see if the title rendered correctly
     expect(el?.textContent).toContain('About DBZ API');
   });
+
+  //this is how you can disable a test from running by using the xit keyword
+  xit('is very bad test', () => {
+    expect(null).not.toBeNull();
+  })
 });
