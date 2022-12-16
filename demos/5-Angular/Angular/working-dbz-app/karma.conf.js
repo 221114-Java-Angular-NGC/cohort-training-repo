@@ -10,7 +10,8 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma'),
+      require('karma-firefox-launcher') //must have plugin included to run any specific browser
     ],
     client: {
       jasmine: {
@@ -37,7 +38,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['Firefox'], //this can be modifed to whatever browser you want to run Karma (be sure to npm install its plugin if it's not Chrome)
     singleRun: false,
     restartOnFileChange: true
   });
