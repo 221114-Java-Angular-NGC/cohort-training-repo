@@ -1,6 +1,7 @@
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AboutComponent } from './about.component';
 
@@ -15,7 +16,8 @@ describe('AboutComponent', () => {
   //using beforeEach, beforeAll, afterEach, and afterAll keywords
   beforeEach(async () => {
     await TestBed.configureTestingModule({ //this configures the environment for the class we want to test
-      declarations: [ AboutComponent ]
+      declarations: [ AboutComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     //after set the environment, we will be loading in all components
     .compileComponents();
