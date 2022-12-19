@@ -1,0 +1,40 @@
+# Week 6 Spring Topics
+
+- [Spring Framework](https://spring.io/projects/spring-framework)
+  -[IOC](https://www.martinfowler.com/articles/injection.html)
+  -Dependency Injection
+  - Core
+    - Bean lifecycle
+    - Injecting primitives (XML)
+    - Bean Factory vs. App Context
+    - Injecting objects (XML)
+    - Annotations
+      - @Component, @Repository, @Service, @Autowired
+  - [AOP](https://docs.spring.io/spring/docs/2.5.x/reference/aop.html)
+    - Aspect Oriented Programming (AOP)
+    - Cross-cutting concerns
+    - Advice
+      - Types
+    - Pointcut
+    - Join points
+    - Hooks
+    - Aspect-J
+  - MVC
+    - Control flow
+    - @Controller
+    - @RequestMapping
+    - InternalViewResourceResolver
+    - HandlerMapper
+    - SpringFrontController
+  - Integration
+    - RestTemplate
+  - [Data/JPA](https://spring.io/projects/spring-data)
+    - Form input
+    - Validation (JSR 303)
+    - Hibernate Integration using Contextual Sessions
+    - @Transactional
+    - CrudRepository/JPARepository
+  - [Boot](https://spring.io/projects/spring-boot)
+    - Convention over COnfiguration
+    - @Configuration
+    - application.yml/properties
