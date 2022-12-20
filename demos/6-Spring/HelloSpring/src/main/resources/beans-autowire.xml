@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+	<!--  
+		What is Autowiring?
+			Autowiring is when Spring scans you objects to determine WHICH dependencies it needs. 
+			
+		Injection vs Autowiring
+			Injection is HOW we inject our dependencies.
+			Autowiring is asking WHICH dependencies do we need. 
+			
+		Autowiring modes: 
+			"no" : mean Spring will not autowiring anything. This is the default 
+			"byType": means Sprring will look at the class's member datatypes then match those datatypes to beans decalured 
+						in the IoC container. 	
+						Also uses Setter Injection strategy. 
+						
+			"byName": means Spring will look at the class's property variable name, then match those to the IoC container. 
+						Also uses Setter Injection strategy 
+			
+			"constructor": work similar to ByType, except it injects using the constructor with the most dependencies.
+						Uses the Constructor injection strategy. 
+		
+	 -->
+	 
+	 <bean name="simpleBean" class="com.revature.beans.SimpleBean"></bean>
+	 
+	 <!--  Types of Autowiring: -->
+	 
+	 <bean name="ComplexBeanByName" class="com.revature.beans.ComplexBean" autowire= "byName"></bean>
+	 <bean name="ComplexBeanbyType" class="com.revature.beans.ComplexBean" autowire= "byType"></bean>
+	 
+	 <!--  I'm using both the autowire feature as well as directly telling it to inject values.  -->
+	 <bean name="ComplexBeanbyConstructor" class="com.revature.beans.ComplexBean" autowire= "constructor"> 
+	 	<constructor-arg index="1" type="String" value="Winter"></constructor-arg>
+ 		<constructor-arg index="2" type="int" value="12"></constructor-arg>
+	 </bean>
+		
+</beans>

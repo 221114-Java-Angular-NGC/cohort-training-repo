@@ -3,6 +3,7 @@ package com.revature;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.revature.beans.ComplexBean;
 import com.revature.beans.SimpleBean;
 
 public class MainDriver {
@@ -37,18 +38,40 @@ public class MainDriver {
 	 */
 	
 	// Creating a IoC Container.
-	private static ApplicationContext appContext = new ClassPathXmlApplicationContext("beans-manual.xml");
+//	private static ApplicationContext appContext = new ClassPathXmlApplicationContext("beans-manual.xml");
+//	private static ApplicationContext appContext = new ClassPathXmlApplicationContext("beans-autowire.xml");
+	private static ApplicationContext appContext = new ClassPathXmlApplicationContext("beans-annotations.xml");
 
 	public static void main(String[] args) {
 	
 		
 		//The old way of managing classes and objects
-		SimpleBean sb = new SimpleBean();
+//		SimpleBean sb = new SimpleBean();
+//		sb = new SimpleBean();
+//		sb = new SimpleBean();
+//		sb = new SimpleBean();
+//		sb = new SimpleBean(); //I've made 5 instances of the same object!
 		
 		//the new way - we don't use the "New" keyword anymore
-		SimpleBean sb2 = appContext.getBean("MyFirstBean",SimpleBean.class);
+		//demonstrating the difference between prototype and singleton
+//		SimpleBean sb2 = appContext.getBean("MyFirstBean",SimpleBean.class);
+//		sb2 = appContext.getBean("MyFirstBean",SimpleBean.class);
+//		sb2 = appContext.getBean("MyFirstBean",SimpleBean.class);
+//		sb2 = appContext.getBean("MyFirstBean",SimpleBean.class);
+//		sb2 = appContext.getBean("MyFirstBean",SimpleBean.class);
+//		
+//		sb2 = appContext.getBean("MyPrototypeBean",SimpleBean.class);
+//		sb2 = appContext.getBean("MyPrototypeBean",SimpleBean.class);
+//		sb2 = appContext.getBean("MyPrototypeBean",SimpleBean.class);
+//		sb2 = appContext.getBean("MyPrototypeBean",SimpleBean.class);
+//		sb2 = appContext.getBean("MyPrototypeBean",SimpleBean.class);
 		
-		sb2.saySomething();
+//		sb2.saySomething();
+		
+//		ComplexBean cb = appContext.getBean("ComplexBeanWithConstructor",ComplexBean.class);
+		ComplexBean cb = appContext.getBean("ComplexBean",ComplexBean.class);
+		cb.saySomethingMore();
+	
 
 	}
 

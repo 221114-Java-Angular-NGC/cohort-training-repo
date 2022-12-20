@@ -10,5 +10,49 @@
 		
 <!--  If we wanted Spring to manage a bean: -->
 <bean name="MyFirstBean" class="com.revature.beans.SimpleBean"></bean>
+<bean name="MyPrototypeBean" class="com.revature.beans.SimpleBean" scope="prototype"></bean>
+
+<!--  BEAN scopes 
+	1) Singleton (default): tells Spring to ONLY ever make a single instance!
+	2) Prototype: tells Spring that wherever someone asks for that bean, then we create another instance 
+	
+	Web Related: 
+	1) Request
+	2) Session 
+	3) GlobalSession
+ -->
+ 
+ <!--  How to create a bean with dependencies -->
+ 
+ <!--  Bean wiring - the process of adding dependencies to our beans -->
+ <!--  CONSTRUCTION INJECTION -->
+ <bean name = "ComplexBeanWithConstructor" class="com.revature.beans.ComplexBean" scope="singleton">
+ 	<constructor-arg index="0" ref="MyFirstBean"></constructor-arg>
+ 	<constructor-arg index="1" type="String" value="Winter"></constructor-arg>
+ 	<constructor-arg index="2" type="int" value="12"></constructor-arg>
+ </bean>
+ 
+ <!--  Try to make your own constructor injection using only single args constructor -->
+ <bean name="ComplexBeanWithSingleArgs" class="com.revature.beans.ComplexBean"></bean>
+ 
+ 
+ <!--  SETTER INJECTION -->
+ <bean name="ComplexBeanWithSetter" class="com.revature.beans.ComplexBean">
+ 	<property name="simpleBean" ref="MyPrototypeBean"></property>
+ 	
+ </bean>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 </beans>
