@@ -1,0 +1,27 @@
+# The .properties file is formated like this: 
+# key=value
+# key2=value 
+
+
+# I'll be refactoring this file into a .yaml file 
+# YAML stands for YAML Ain't Markup Language 
+# YAML uses indents to configure: 
+# Key
+#   NEstedKey: 
+#     value2
+
+
+#With Spring Boot and Data, I still need provide values for my own business uses. 
+# e.g. my endpoints, my own logic and my own database connectino value 
+
+spring:
+  datasource: 
+    url: jdbc:postgresql://localhost/postgres
+    username: postgres
+    password: p4ssw0rd
+    driver-class-name: org.postgresql.Driver
+  jpa: 
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:      ddl-auto: create
+    show-sql: true 
+    
