@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.revature</groupId>
+  <artifactId>SpringORM</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+  	<maven.compiler.source>1.8</maven.compiler.source>
+  	<maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
+  <dependencies>
+  	<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+  	<!--  Spring CORE, provides the IoC container -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>5.3.23</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+	<!--  Spring BEANS, Provides Dependency Injection features -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-beans</artifactId>
+	    <version>5.3.23</version>
+	</dependency>
+	
+	<!-- Spring CONTEXT, Provides annotations and package scanning -->
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>5.3.23</version>
+	</dependency>
+	
+	<!--  JDBC  -->
+	<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+	<dependency>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>42.4.3</version>
+	</dependency>
+	
+	<!--  Hibernate CORE - This is the ORM framework that will be puppeted by Spring ORM -->
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>5.6.12.Final</version>
+	</dependency>
+	
+	<!--  SPring ORM, provide the ORM tools that will allow us to puppet Hibernate -->
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>5.3.24</version>
+	</dependency>
+	
+	
+	
+</dependencies>
+</project>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+		
+<!--  We need to turn on annotations first -->
+<context:annotation-config/>
+
+<!--  Point Spring to the right places to scan for annotations -->
+<!-- <context:component-scan base-package="com.revature.beans"></context:component-scan> -->
+
+<!--  This will scan everywhere inside of revature package! -->
+<context:component-scan base-package="com.revature"></context:component-scan>
+
+<!--  Turning on tx annotations (Spring ORM) -->
+<tx:annotation-driven/>
+
+
+<!--  Data source - this bean is a JDBC bean. In the datasource, we pass in information for connection to the database -->
+<!--  Username, password, location, etc . -->
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="org.postgresql.Driver"></property>
+	<property name="url" value="jdbc:postgresql://localhost/postgres"></property>
+	<property name="username" value="postgres"></property>
+	<property name="password" value="p4ssw0rd"></property>
+</bean>
+
+
+<!--  SessionFactory - this bean is a hibernate instance. We configure it here, so that it knows how to manipulate our database. -->
+<bean id = "sessionFactory" class = "org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+	<property name = "dataSource" ref = "dataSource"/> <!-- This is the details to connect to our db -->
+	<property name="packagesToScan" value = "com.revature.models"/> <!-- This is the details of our POJOs -->
+	<property name="hibernateProperties">
+		<props>
+			<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop> <!-- Hibernate will convert java code into any flavor of SQL -->
+			<prop key="hibernate.hbm2ddl.auto">validate</prop> <!--  other options like, validate, update, creeate, none -->
+			<prop key="hibernate.show_sql">false</prop>
+			<prop key="hibernate.format_sql">false</prop>
+		</props>
+	
+	</property>
+
+</bean>
+</beans>
