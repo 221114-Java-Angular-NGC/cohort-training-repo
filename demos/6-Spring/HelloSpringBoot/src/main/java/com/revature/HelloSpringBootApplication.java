@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.revature.models.Fruit;
 import com.revature.revature.FruitRepo;
+import com.revature.revature.RepoFactory;
 
 /*
  * With Spring Boot, we're following opinionated development. The idea is that Spring boot is going to make some 
@@ -19,27 +20,13 @@ import com.revature.revature.FruitRepo;
 
 @SpringBootApplication
 public class HelloSpringBootApplication {
-
-	@Autowired
-	private FruitRepo fruip;
-	
-	@Bean
-	FruitRepo createFruitRepo() {
-		return this.fruip;
-	}
 	
 	public static void main(String[] args) {
-		SpringApplication.run(HelloSpringBootApplication.class, args);
-		
-		HelloSpringBootApplication hsba = new HelloSpringBootApplication();
-		
-		FruitRepo frup = hsba.createFruitRepo();
-		
+		FruitRepo frup = (FruitRepo) SpringApplication.run(HelloSpringBootApplication.class, args).getBean("fruitRepo");
 		
 		frup.save(new Fruit(-27, "Apple", 50));
 		
-		
-		System.out.println(hsba.fruip.findAll());
+		System.out.println(frup.findAll());
 	}
 
 }
