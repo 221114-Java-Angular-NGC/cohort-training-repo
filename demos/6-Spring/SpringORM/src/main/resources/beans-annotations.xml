@@ -43,6 +43,42 @@
 		</props>
 	
 	</property>
+	
+
 
 </bean>
+
+	<!--  TRANSACTION MANAGER
+		This is another Hibernate bean instance
+		This bean is responsible for .... managing our transactions 
+			(and also our contextual sessions)
+			
+		What are contextual sessions?
+			Contextual sessions are generate by "getCurrentSession()". It provides a session object 
+				which is in Hibernate context and managed by Hibernate. It's scope is bound to a transaction
+			
+		If you're using Spring Data, then you already have a transaction manager
+			-->
+<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+</bean>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 </beans>
