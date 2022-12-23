@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.revature</groupId>
-	<artifactId>SpringAOP</artifactId>
+	<artifactId>ConsumerService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringAOP</name>
-	<description>Demo project for Spring AOP and other useful stuff</description>
+	<name>ConsumerService</name>
+	<description>Demo project for RestTemplate</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -42,10 +42,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-aop</artifactId>
-    </dependency>
 	</dependencies>
 
 	<build>
