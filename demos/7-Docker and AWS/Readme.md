@@ -1,0 +1,53 @@
+# Week 7 DevOps
+
+- [Linux](https://www.tutorialspoint.com/unix/index.htm)
+  - File system
+  - Distributions:
+    - Ubuntu, OpenSUSE, RedHat
+    - Amazonlinux
+  - GNU Core Utilities:
+    - cat, cd, cp, ls, mkdir, rm, mv, touch, chmod, pwd, nohup
+  - Other tools:
+    - grep, man, yum, less, crontab
+  - Bash
+    - terminal emulator vs shell
+    - scripting
+    - ssh
+
+- [Amazon Web Services (AWS)](https://docs.aws.amazon.com/)
+  - [On Premises vs Hybrid vs Cloud](https://servicemuse.com/cloud-vs-on-premises-vs-hybrid/)
+  - [IaaS vs PaaS vs SaaS](https://medium.com/datadriveninvestor/saas-vs-iaas-vs-paas-cloud-computing-models-explained-with-its-benefits-276298aea66d)
+  - Region vs. Availability Zone
+  - Identity and Access Management (IAM)
+  - Virtual Private Cloud (VPC)
+  - Elastic Cloud Compute (EC2)
+    - Security Groups
+    - Autoscaling Groups
+    - Load balancers
+    - Amazon Machine Image (AMI)
+    - Elastic Block Store (EBS)
+  - Simple Storage Service (S3)
+  - Relational Database Service (RDS)
+
+- [DevOps](https://www.atlassian.com/devops)
+  - Software Development Lifecycles:
+    - Iterative vs Waterfall vs Agile
+    - Agile/Scrum
+    - User stories, burndown charts
+    - iterations, retrospectives
+    - standup meetings
+  - [Git SCM for teams:](https://nvie.com/posts/a-successful-git-branching-model/)
+    - master, dev, feature branching
+    - code reviews & pull requests
+  - [Pipelines](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment)
+    - Continuous Integration (CI):
+      - source -> SCM -> build server
+    - Continuous Delivery (CD)
+      - build server -> :
+        - QA/Test/UAT servers
+        - Quality gate (SonarQube)
+        - Code coverage
+        - Staging/Production server
+      - bash scripting
+    - [Jenkins](https://jenkins.io/doc/)
+      - Setup, plugins, jobs, builds
