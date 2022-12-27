@@ -3,6 +3,8 @@ package com.revature.aspects;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -64,19 +66,23 @@ public class AspectExample {
 	 * 	how to act based on that information . 
 	 * 	e.g. It can halt methods from ever executing their logic. 
 	 */
-//	@Around("execution(void com.revature.service.FruitService.*(..))")
-//	public void allAround(ProceedingJoinPoint pjp) throws Throwable {
-//		
-//		System.out.println("-----------");
-//		System.out.println("Before everything in the FruitService class");
-//		
-//		pjp.proceed(); //this target method won't execute it's logic until .proceed() has been called. 
-//		
-//		System.out.println("After everything");
-//		System.out.println("-----------");
-//		
-//	}
+	@Around("execution(void com.revature.service.FruitService.*(..))")
+	public void allAround(ProceedingJoinPoint pjp) throws Throwable {
+		
+		System.out.println("-----------");
+		System.out.println("Before everything in the FruitService class");
+		
+		pjp.proceed(); //this target method won't execute it's logic until .proceed() has been called. 
+		
+		System.out.println("After everything");
+		System.out.println("-----------");
+		
+	}
 	
+	
+	//There are also other types of Advices we can have 
+//	@AfterReturning
+//	@AfterThrowing
 		
 
 }
