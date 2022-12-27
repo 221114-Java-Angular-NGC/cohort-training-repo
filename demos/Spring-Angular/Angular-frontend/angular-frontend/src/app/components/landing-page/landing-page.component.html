@@ -1,0 +1,34 @@
+<div class="container">
+    <div class = "row spacer otherfont">
+        <h1> Welcome to Spring-Angular session example!</h1>
+    </div>
+
+    <div class = "row spacer">
+        <div class = "col-8">
+            Logged in message: {{loginMessage}}
+        </div>
+        <div class = "col-4">
+            <button class = "btn btn-primary" (click) = "firstButton()">Login Button</button>
+        </div>
+    </div>
+
+    <div class = "row spacer">
+        <div class = "col-8">
+            Logout Message: {{logoutMessage}}
+        </div>
+        <div class = "col-4">
+            <button class = "btn btn-primary" (click) = "secondButton()">Logout Button</button>
+        </div>
+    </div>
+
+    <div class = "row spacer">
+        <div class = "col-8">
+            CheckSession: {{userDetails}}
+        </div>
+        <div class = "col-4">
+            <button class = "btn btn-primary" (click) = 'thirdButton()'>Check Session Button</button>
+        </div>
+    </div>
+</div>
+
+
