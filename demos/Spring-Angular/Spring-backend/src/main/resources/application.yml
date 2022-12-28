@@ -3,7 +3,7 @@ server:
   
 spring:
   datasource: 
-    url: jdbc:postgresql://localhost/postgres
+    url: jdbc:postgresql://my-database.cqoseij0k35s.us-east-2.rds.amazonaws.com/postgres
     username: postgres
     password: p4ssw0rd
     driver-class-name: org.postgresql.Driver
@@ -11,4 +11,4 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: false
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create

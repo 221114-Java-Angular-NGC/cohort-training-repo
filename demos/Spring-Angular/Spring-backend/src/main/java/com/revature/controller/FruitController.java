@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.models.Fruit;
+import com.revature.model.Fruit;
 import com.revature.repo.FruitRepo;
 
 @RestController //controller class
