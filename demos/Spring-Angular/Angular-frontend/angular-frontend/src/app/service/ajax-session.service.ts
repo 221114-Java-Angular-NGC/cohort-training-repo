@@ -8,6 +8,8 @@ import { Message } from '../models/message';
 })
 export class AjaxSessionService {
 
+  url: string = "http://ec2-3-134-96-49.us-east-2.compute.amazonaws.com:7000";
+
   //We'll be using HttpClient to communicate over HTTP
   constructor(private myClient: HttpClient) { }
 
@@ -21,16 +23,16 @@ export class AjaxSessionService {
     //Angular, like Spring, does not trust other domains. 
     // IT will not send over any cookies, tokens or sessions to other domains by default 
 
-    return this.myClient.get<Message>("http://localhost:7000/login",{withCredentials:true});
+    return this.myClient.get<Message>(this.url + "/login",{withCredentials:true});
   
   } // 
 
   logoutRequest(): Observable<any>{
 
-   return this.myClient.get("http://localhost:7000/logout",{withCredentials:true});
+   return this.myClient.get(this.url + "/logout",{withCredentials:true});
   }
 
   booleanCheckSession(): Observable<boolean>{
-    return this.myClient.get<boolean>("http://localhost:7000/checkAccess",{withCredentials:true});
+    return this.myClient.get<boolean>(this. url + "/checkAccess",{withCredentials:true});
   }
 }

@@ -10,7 +10,7 @@ import com.revature.model.User;
 import jakarta.servlet.http.HttpSession;
 
 @RestController
-@CrossOrigin(origins={"http://localhost:4200"},allowCredentials = "true")
+@CrossOrigin(origins={"http://localhost:4200","https://my-angular-frontend-1.s3.us-east-2.amazonaws.com/"},allowCredentials = "true")
 public class SessionController {
 
 	//Set session 
