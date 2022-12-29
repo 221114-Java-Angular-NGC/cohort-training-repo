@@ -1,0 +1,11 @@
+#Simple Docker file 
+# Copy over the Jar file into our docker image and then provide the run command 
+
+#To run Java apps, I need the JRE 
+FROM openjdk:20-ea-17-jdk
+
+#Copy over the file to our loacal container
+#Copy over the jar file in the target folder in the host machine, into the root folder of the container and relable the jar as a demo.jar
+COPY ./target/Spring-backend-0.0.1-SNAPSHOT.jar ./random/folder/demo.jar
+
+CMD ["java", "-jar", "/random/folder/demo.jar"]

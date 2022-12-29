@@ -1,0 +1,13 @@
+
+#Copying over all the files and then compiling the jar file inside of the container. 
+#JDK won't work, we need MVN to compile this spring boot project
+FROM maven:3.8.6-amazoncorretto-17
+
+COPY ./ ./
+
+#Allows us to run some commands before our CMD "final run" command 
+RUN echo "hello"
+
+RUN mvn clean package 
+
+CMD ["java", "-jar", "./target/Spring-backend-0.0.1-SNAPSHOT.jar"]
