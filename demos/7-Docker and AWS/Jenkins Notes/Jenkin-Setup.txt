@@ -1,0 +1,55 @@
+Setting up Jenkins with Docker and Kubernetes 
+
+1) Install Java https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/amazon-linux-install.html
+2) Install Git https://cloudaffaire.com/how-to-install-git-in-aws-ec2-instance/
+3) Install Jenkins https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/
+4) Install Docker https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-container-image.html
+	a) Set Jenkins to give permission to use docker 
+		$sudo groupadd docker (if the group does not exist)
+		$sudo usermod -aG docker jenkins (add jenkins to the group)
+		
+		(and optionally , we can adjust permission on the docker.sock file)
+		$chmod 777 /var/run/docker.sock
+		
+	OR
+	b) Set Jenkins as a super user 
+		(In the root folder)
+		$sudo visudo
+		Add this line to the file "jenkins ALL=(ALL) NOPASSWD: ALL"
+		$service jenkins restart 
+		
+
+Configuring Jenkins: 
+	Manage Plugins: Install Maven integration, GitHub integration, optionall Docker and Kubernetes integeration 
+	Jenkins job: Maven Project 
+		General: 
+			GitHub Project: Project url (without .git)
+		SCM: 
+			Git: Project url with .git, add credentials (username and password - password can be personal access tokens)
+		Build Triggers:
+			GitHub hook trigger for GITScm polling - Make sure to set up web hook. 
+		Build Environment:
+			You can set up environment variables here (best practice)
+		Pre Steps: 
+			
+		Build: 
+			Root pom: /path/to/pom/in/git/repo/pom.xml
+			Goals and options: <maven lifecycle> (e.g. clean package)
+		Post Steps: 
+		
+			For running the built jar file: 
+				#!/bin/bash
+				echo kill existing
+				pkill -f 'java -jar'
+				echo starting deploy
+				BUILD_ID=dontKillMe nohup java -jar  file/path/<jar-file>.jar &
+				echo deploy finished
+				
+			For Docker build and publish: 
+			(We configure access by using a DockerHub token - if Jenkins is having trouble)
+				docker login -u=barayathel -p=<access-token>
+				docker build -t <repo>/<image>:<tag> .
+				docker push <repo>/<image>:<tag>
+				
+		Build Settings:
+		Post Build Actions: 
